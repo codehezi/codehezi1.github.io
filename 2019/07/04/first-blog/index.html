@@ -78,6 +78,8 @@
     <link rel="preload" href="/css/style.css?v=20180824" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <link rel="stylesheet" href="/css/mobile.css?v=20180824" media="(max-width: 980px)">
     
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    
     <!-- /*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
 /* This file is meant as a standalone workflow for
 - testing support for link[rel=preload]
@@ -201,14 +203,23 @@
 </head>
 
     
-        <body class="home-body">
+        <body class="post-body">
     
     
-<header class="header index-header">
+<header class="header">
 
     <div class="read-progress"></div>
     <div class="header-sidebar-menu">&#xe775;</div>
     <!-- post页的toggle banner  -->
+    
+    <div class="banner">
+            <div class="blog-title">
+                <a href="/" >fi3ework&#39;s Studio.</a>
+            </div>
+            <div class="post-title">
+                <a href="#" class="post-name"></a>
+            </div>
+    </div>
     
     <a class="home-link" href=/>fi3ework's Studio.</a>
 </header>
@@ -227,17 +238,17 @@ height:50vh;
     <!-- 主页  -->
     
     
-    <!-- 文章页  -->
+    <!-- 404页  -->
             
     <div class="site-intro-placeholder"></div>
-    <div class="site-intro-img" style="background-image: url(/intro/index-bg.jpg)"></div>
+    <div class="site-intro-img" style="background-image: url(/intro/post-bg.jpg)"></div>
     <div class="site-intro-meta">
         <!-- 标题  -->
         <h1 class="intro-title">
             <!-- 主页  -->
             
-            fi3ework's Studio.
-            <!-- 文章页  -->
+            [Untitled Post]
+            <!-- 404 -->
             
         </h1>
         <!-- 副标题 -->
@@ -245,12 +256,43 @@ height:50vh;
             <!-- 主页副标题  -->
             
             
-                it's better to burn out than to fade away
-            
-            <!-- 文章页  -->
+            <!-- 404 -->
             
         </p>
         <!-- 文章页meta -->
+        
+            <div class="post-intros">
+                <!-- 文章页标签  -->
+                
+                
+                    <div class="post-intro-read">
+                        <span>字数统计: <span class="post-count word-count">361</span>阅读时长: <span class="post-count reading-time">2 min</span></span>
+                    </div>
+                
+                <div class="post-intro-meta">
+                    <span class="post-intro-calander iconfont-archer">&#xe676;</span>
+                    <span class="post-intro-time">2019/07/04</span>
+                    
+                    <span id="busuanzi_container_page_pv" class="busuanzi-pv">
+                        <span class="iconfont-archer">&#xe602;</span>
+                        <span id="busuanzi_value_page_pv"></span>
+                    </span>
+                    
+                    <span class="shareWrapper">
+                        <span class="iconfont-archer shareIcon">&#xe71d;</span>
+                        <span class="shareText">Share</span>
+                        <ul class="shareList">
+                            <li class="iconfont-archer share-qr" data-type="qr">&#xe75b;
+                                <div class="share-qrcode"></div>
+                            </li>
+                            <li class="iconfont-archer" data-type="weibo">&#xe619;</li>
+                            <li class="iconfont-archer" data-type="qzone">&#xe62e;</li>
+                            <li class="iconfont-archer" data-type="twitter">&#xe634;</li>
+                            <li class="iconfont-archer" data-type="facebook">&#xe67a;</li>
+                        </ul>
+                    </span>
+                </div>
+            </div>
         
     </div>
 </div>
@@ -351,162 +393,62 @@ height:50vh;
 </script>        
         <img class="loading" src="/assets/loading.svg" style="display: block; margin: 6rem auto 0 auto; width: 6rem; height: 6rem;" />
         <div class="container container-unloaded">
-            <main class="main index-page">
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2019/07/04/first-blog/" >
-            
-                <span>[Untitled Post]</span>
-        </a>
-        <div class="abstract-content">
-            
-  关于springmvc和mybatis的配置文件#####web.xml中的配置：    &lt;filter &lt;filter-name&gt;characterEncodingFilter&lt;/filter-name&gt;  &lt;filter-class&gt;org.springframework.web.filter.CharacterEncodingFilter&lt;/filter-class&gt;  &lt;init-param&gt;    &lt;param-name&gt;encoding&lt;/param-name&gt;   &lt;par...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/07/04</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2019/07/01/hello-world/" >
-            
-                <span>Hello World</span>
-        </a>
-        <div class="abstract-content">
-            Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Quick StartCreate a new post1$ hexo new "My New Post"
+            <main class="main post-page">
+    <article class="article-entry">
+        <hr>
+<h2 id="关于springmvc和mybatis的配置文件"><a href="#关于springmvc和mybatis的配置文件" class="headerlink" title="  关于springmvc和mybatis的配置文件"></a>  关于springmvc和mybatis的配置文件</h2><p>#####web.xml中的配置：<br>   <?xml version="1.0" encoding="UTF-8"?><br><web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" xsi:schemalocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0"><br> &lt;filter<br> &lt;filter-name&gt;characterEncodingFilter&lt;/filter-name&gt;<br>  &lt;filter-class&gt;org.springframework.web.filter.CharacterEncodingFilter&lt;/filter-class&gt;<br>  &lt;init-param&gt;<br>    &lt;param-name&gt;encoding&lt;/param-name&gt;<br>   &lt;param-value&gt;utf-8&lt;/param-value&gt;<br>  &lt;/init-param&gt;<br>  &lt;/filter&gt;<br>   &lt;filter-mapping&gt;<br>   &lt;filter-name&gt;characterEncodingFilter&lt;/filter-name&gt;<br>   &lt;url-pattern&gt;<em>.do&lt;/url-pattern&gt;<br>   &lt;/filter-mapping&gt;<br>  &lt;servlet&gt;<br>  &lt;servlet-name&gt;demo&lt;/servlet-name&gt;<br> &lt;servlet-class&gt;org.springframework.web.servlet.DispatcherServlet&lt;/servlet-class&gt;<br>  &lt;/servlet&gt;<br>  &lt;servlet-mapping&gt;<br>  &lt;servlet-name&gt;demo&lt;/servlet-name&gt;<br> &lt;url-pattern&gt;</em>.do&lt;/url-pattern&gt;<br>  &lt;/servlet-mapping&gt;<br>&lt;/web-app&gt;</web-app></p>
+<p>####springmvc-servlet.xml文件配置<br><?xml version="1.0" encoding="UTF-8"?><br><beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p" xmlns:context="http://www.springframework.org/schema/context" xsi:schemalocation="
+        http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd"><br>    &lt;context:component-scan base-package=”com.hezi.Controller”/&gt;<br>&lt;/beans&gt;</beans></p>
+<p>####mybatis.xml配置文件<br><?xml version="1.0" encoding="UTF-8"?><br><!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-config.dtd"><br>&lt;configuration&gt;<br>&lt;environments default=”default”&gt;<br>&lt;environment id=”default”&gt;<br>&lt;transactionManager type=”JDBC”/&gt;<br>&lt;dataSource type=”POOLED”&gt;<br>  &lt;property name=”driver” value=”com.mysql.jdbc.Driver”/&gt;<br>  &lt;property name=”url” value=”jdbc:mysql://localhost:3306/student?characterEncoding=utf-8”/&gt;<br>  &lt;property name=”username” value=”root”/&gt;<br> &lt;property name=”password” value=”123456”/&gt;<br>&lt;/dataSource&gt;<br>&lt;/environment&gt;<br>&lt;/environments&gt;<br>&lt;mappers&gt;<br>&lt;mapper resource=”com/hezi/mapper/mapper.xml”/&gt;<br>&lt;/mappers&gt;<br>&lt;/configuration&gt;</p>
+<p>####com.hezi.mapper下的映射文件mapper.xml<br><?xml version="1.0" encoding="UTF-8"?><br><!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd"><br>&lt;mapper namespace=”com.hezi.mapper”&gt;<br>&lt;select id=”sel” resultType=”com.hezi.pojo.User”&gt;<br>select * from user<br>&lt;/select&gt;<br>&lt;select id=”sel1” resultType=”com.hezi.pojo.U” parameterType=”com.hezi.pojo.U”&gt;<br>select uname,upass from u where uname=#{uname} and upass=#{upass}<br>&lt;/select&gt;<br>&lt;insert id=”ins” parameterType=”com.hezi.pojo.U”&gt;<br>insert into u values(default,#{uname},#{upass})<br>&lt;/insert&gt;<br>&lt;/mapper&gt;</p>
+<p>####需要的jar包<br>![图片]<a href="https://github.com/codehezi/test/blob/master/1.png" target="_blank" rel="noopener">Alt text</a></p>
 
-More info: Writing
-Run server1$ hexo server
-
-Mo...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/07/01</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
     </article>
+    <!-- license  -->
+    
+        <div class="license-wrapper">
+            <p>原文作者：<a href="http://yoursite.com">John Doe</a>
+            <p>原文链接：<a href="http://yoursite.com/2019/07/04/first-blog/">http://yoursite.com/2019/07/04/first-blog/</a>
+            <p>发表日期：<a href="http://yoursite.com/2019/07/04/first-blog/">July 4th 2019, 10:13:40 pm</a>
+            <p>更新日期：<a href="http://yoursite.com/2019/07/04/first-blog/">July 5th 2019, 6:03:55 am</a>
+            <p>版权声明：本文采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p>
+        </div>
     
     <!-- paginator  -->
-    
-</main>
-            <!-- profile -->
+    <ul class="post-paginator">
+        <li class="next">
             
-            <div class="profile">
-    <img class="profile-avatar" alt="avatar" src= /avatar/Misaka.jpg >
-    <div class="profile-name">fi3ework</div>
-    
-    <div class="profile-signature">
-        witness me
-    </div>
-    
-    
-    <div class="profile-social">
-        
-    
-        
+        </li>
+        <li class="previous">
             
-                <a href="mailto:12345@qq.com" class="iconfont-archer email" title=email ></a>
+                <div class="prevSlogan">Previous Post</div>
+                <a href= "/2019/07/01/hello-world/" title= "Hello World">
+                    <div class="prevTitle">Hello World</div>
+                </a>
             
-        
+        </li>
+    </ul>
+    <!-- 评论插件 -->
+    <!-- 来必力City版安装代码 -->
+
+<!-- City版安装代码已完成 -->
     
-        
-            
-                <a href="//github.com/fi3ework" class="iconfont-archer github" target="_blank" title=github></a>
-            
-        
     
-        
-            
-                <span class="iconfont-archer wechat" title=wechat>
-                  
-                  <img class="profile-qr" src="/assets/example_qr.png" />
-                </span>
-            
-        
+    <!-- partial('_partial/comment/changyan') -->
+    <!--PC版-->
+
+
     
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
     
 
-    </div>
-    
-    
-        <div class="friends">
-            <div>FRIENDS</div>
-            
-                
-                    <span>
-                        <a href= //www.baidu.com target="_black">friendA</a>
-                    </span>
-                
-            
-                
-                    <span>
-                        <a href= //www.google.com target="_black">friendB</a>
-                    </span>
-                
-            
-                
-            
-        </div>
-    
-    
-        <div class="about-me">
-            <a href = "/about" >ABOUT ME</a>
-        </div>
-    
-</div>
+    <!-- 评论 -->
+</main>
+            <!-- profile -->
             
         </div>
         <footer class="footer footer-unloaded">
@@ -589,6 +531,24 @@ Mo...
 </footer>
     </div>
     <!-- toc -->
+    
+    <div class="toc-wrapper" style=
+    
+
+
+
+
+
+
+
+top:50vh;
+
+    >
+        <div class="toc-catalog">
+            <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
+        </div>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#关于springmvc和mybatis的配置文件"><span class="toc-number">1.</span> <span class="toc-text">  关于springmvc和mybatis的配置文件</span></a></li></ol>
+    </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
     <div class="sidebar sidebar-hide">
@@ -723,6 +683,8 @@ jsonContent:
     
     </div>
     <!-- async load share.js -->
+    
+        <script src="/scripts/share.js" async></script>    
      
     </body>
 </html>
