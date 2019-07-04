@@ -266,7 +266,7 @@ height:50vh;
                 
                 
                     <div class="post-intro-read">
-                        <span>字数统计: <span class="post-count word-count">305</span>阅读时长: <span class="post-count reading-time">1 min</span></span>
+                        <span>字数统计: <span class="post-count word-count">618</span>阅读时长: <span class="post-count reading-time">3 min</span></span>
                     </div>
                 
                 <div class="post-intro-meta">
@@ -395,76 +395,76 @@ height:50vh;
         <div class="container container-unloaded">
             <main class="main post-page">
     <article class="article-entry">
-        <h5 id="web-xml中的配置："><a href="#web-xml中的配置：" class="headerlink" title="web.xml中的配置："></a>web.xml中的配置：</h5>   <?xml version="1.0" encoding="UTF-8"?>
-<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" xsi:schemalocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
- &lt;filter
- &lt;filter-name>characterEncodingFilter&lt;/filter-name> 
-  &lt;filter-class>org.springframework.web.filter.CharacterEncodingFilter&lt;/filter-class>
-  &lt;init-param>
-    &lt;param-name>encoding&lt;/param-name>
-   &lt;param-value>utf-8&lt;/param-value>
-  &lt;/init-param>
-  &lt;/filter>
-   &lt;filter-mapping>
-   &lt;filter-name>characterEncodingFilter&lt;/filter-name>
-   &lt;url-pattern>*.do&lt;/url-pattern>
-   &lt;/filter-mapping>
-  &lt;servlet>
-  &lt;servlet-name>demo&lt;/servlet-name>
- &lt;servlet-class>org.springframework.web.servlet.DispatcherServlet&lt;/servlet-class>
-  &lt;/servlet>
-  &lt;servlet-mapping>
-  &lt;servlet-name>demo&lt;/servlet-name>
- &lt;url-pattern>*.do&lt;/url-pattern>
-  &lt;/servlet-mapping>
-&lt;/web-app>
-####springmvc-servlet.xml文件配置
-<?xml version="1.0" encoding="UTF-8"?>
-<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p" xmlns:context="http://www.springframework.org/schema/context" xsi:schemalocation="
-        http://www.springframework.org/schema/beans
-        http://www.springframework.org/schema/beans/spring-beans.xsd
-        http://www.springframework.org/schema/context
-        http://www.springframework.org/schema/context/spring-context.xsd">
-    &lt;context:component-scan base-package="com.hezi.Controller"/>
-&lt;/beans>
-#### mybatis.xml配置文件
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE configuration
-  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
-  "http://mybatis.org/dtd/mybatis-3-config.dtd">
-&lt;configuration>
-&lt;environments default="default">
-&lt;environment id="default">
-&lt;transactionManager type="JDBC"/>
-&lt;dataSource type="POOLED">
-  &lt;property name="driver" value="com.mysql.jdbc.Driver"/>
-  &lt;property name="url" value="jdbc:mysql://localhost:3306/student?characterEncoding=utf-8"/>
-  &lt;property name="username" value="root"/>
- &lt;property name="password" value="123456"/>
-&lt;/dataSource>
-&lt;/environment>
-&lt;/environments>
-&lt;mappers>
-&lt;mapper resource="com/hezi/mapper/mapper.xml"/>
-&lt;/mappers>
-&lt;/configuration>
-#### com.hezi.mapper下的映射文件mapper.xml
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-&lt;mapper namespace="com.hezi.mapper">
-&lt;select id="sel" resultType="com.hezi.pojo.User">
+        <h4 id="web-xml中的配置："><a href="#web-xml中的配置：" class="headerlink" title="web.xml中的配置："></a>web.xml中的配置：</h4><pre><code class="bash">   &lt;?xml version=<span class="string">"1.0"</span> encoding=<span class="string">"UTF-8"</span>?&gt;
+&lt;web-app xmlns:xsi=<span class="string">"http://www.w3.org/2001/XMLSchema-instance"</span> xmlns=<span class="string">"http://java.sun.com/xml/ns/javaee"</span> xmlns:web=<span class="string">"http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"</span> xsi:schemaLocation=<span class="string">"http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"</span> id=<span class="string">"WebApp_ID"</span> version=<span class="string">"3.0"</span>&gt;
+ &amp;lt;filter
+ &amp;lt;filter-name&gt;characterEncodingFilter&amp;lt;/filter-name&gt; 
+  &amp;lt;filter-class&gt;org.springframework.web.filter.CharacterEncodingFilter&amp;lt;/filter-class&gt;
+  &amp;lt;init-param&gt;
+    &amp;lt;param-name&gt;encoding&amp;lt;/param-name&gt;
+   &amp;lt;param-value&gt;utf-8&amp;lt;/param-value&gt;
+  &amp;lt;/init-param&gt;
+  &amp;lt;/filter&gt;
+   &amp;lt;filter-mapping&gt;
+   &amp;lt;filter-name&gt;characterEncodingFilter&amp;lt;/filter-name&gt;
+   &amp;lt;url-pattern&gt;*.<span class="keyword">do</span>&amp;lt;/url-pattern&gt;
+   &amp;lt;/filter-mapping&gt;
+  &amp;lt;servlet&gt;
+  &amp;lt;servlet-name&gt;demo&amp;lt;/servlet-name&gt;
+ &amp;lt;servlet-class&gt;org.springframework.web.servlet.DispatcherServlet&amp;lt;/servlet-class&gt;
+  &amp;lt;/servlet&gt;
+  &amp;lt;servlet-mapping&gt;
+  &amp;lt;servlet-name&gt;demo&amp;lt;/servlet-name&gt;
+ &amp;lt;url-pattern&gt;*.<span class="keyword">do</span>&amp;lt;/url-pattern&gt;
+  &amp;lt;/servlet-mapping&gt;
+&amp;lt;/web-app&gt;</code></pre>
+<h4 id="springmvc-servlet-xml文件配置"><a href="#springmvc-servlet-xml文件配置" class="headerlink" title="springmvc-servlet.xml文件配置"></a>springmvc-servlet.xml文件配置</h4><pre><code class="bash">&lt;?xml version=<span class="string">"1.0"</span> encoding=<span class="string">"UTF-8"</span>?&gt;
+&lt;beans xmlns=<span class="string">"http://www.springframework.org/schema/beans"</span>
+    xmlns:xsi=<span class="string">"http://www.w3.org/2001/XMLSchema-instance"</span>
+    xmlns:p=<span class="string">"http://www.springframework.org/schema/p"</span>
+    xmlns:context=<span class="string">"http://www.springframework.org/schema/context"</span>
+    xsi:schemaLocation=<span class="string">"</span>
+<span class="string">        http://www.springframework.org/schema/beans</span>
+<span class="string">        http://www.springframework.org/schema/beans/spring-beans.xsd</span>
+<span class="string">        http://www.springframework.org/schema/context</span>
+<span class="string">        http://www.springframework.org/schema/context/spring-context.xsd"</span>&gt;
+    &amp;lt;context:component-scan base-package=<span class="string">"com.hezi.Controller"</span>/&gt;
+&amp;lt;/beans&gt;</code></pre>
+<h4 id="mybatis-xml配置文件"><a href="#mybatis-xml配置文件" class="headerlink" title="mybatis.xml配置文件"></a>mybatis.xml配置文件</h4><pre><code class="bash">&lt;?xml version=<span class="string">"1.0"</span> encoding=<span class="string">"UTF-8"</span>?&gt;
+&lt;!DOCTYPE configuration
+  PUBLIC <span class="string">"-//mybatis.org//DTD Config 3.0//EN"</span>
+  <span class="string">"http://mybatis.org/dtd/mybatis-3-config.dtd"</span>&gt;
+&amp;lt;configuration&gt;
+&amp;lt;environments default=<span class="string">"default"</span>&gt;
+&amp;lt;environment id=<span class="string">"default"</span>&gt;
+&amp;lt;transactionManager <span class="built_in">type</span>=<span class="string">"JDBC"</span>/&gt;
+&amp;lt;dataSource <span class="built_in">type</span>=<span class="string">"POOLED"</span>&gt;
+  &amp;lt;property name=<span class="string">"driver"</span> value=<span class="string">"com.mysql.jdbc.Driver"</span>/&gt;
+  &amp;lt;property name=<span class="string">"url"</span> value=<span class="string">"jdbc:mysql://localhost:3306/student?characterEncoding=utf-8"</span>/&gt;
+  &amp;lt;property name=<span class="string">"username"</span> value=<span class="string">"root"</span>/&gt;
+ &amp;lt;property name=<span class="string">"password"</span> value=<span class="string">"123456"</span>/&gt;
+&amp;lt;/dataSource&gt;
+&amp;lt;/environment&gt;
+&amp;lt;/environments&gt;
+&amp;lt;mappers&gt;
+&amp;lt;mapper resource=<span class="string">"com/hezi/mapper/mapper.xml"</span>/&gt;
+&amp;lt;/mappers&gt;
+&amp;lt;/configuration&gt;</code></pre>
+<h4 id="com-hezi-mapper下的映射文件mapper-xml"><a href="#com-hezi-mapper下的映射文件mapper-xml" class="headerlink" title="com.hezi.mapper下的映射文件mapper.xml"></a>com.hezi.mapper下的映射文件mapper.xml</h4><pre><code class="bash">&lt;?xml version=<span class="string">"1.0"</span> encoding=<span class="string">"UTF-8"</span>?&gt;
+&lt;!DOCTYPE mapper PUBLIC <span class="string">"-//mybatis.org//DTD Mapper 3.0//EN"</span> <span class="string">"http://mybatis.org/dtd/mybatis-3-mapper.dtd"</span>&gt;
+&amp;lt;mapper namespace=<span class="string">"com.hezi.mapper"</span>&gt;
+&amp;lt;select id=<span class="string">"sel"</span> resultType=<span class="string">"com.hezi.pojo.User"</span>&gt;
 select * from user 
-&lt;/select>
-&lt;select id="sel1" resultType="com.hezi.pojo.U" parameterType="com.hezi.pojo.U">
-select uname,upass from u where uname=#{uname} and upass=#{upass}
-&lt;/select>
-&lt;insert id="ins" parameterType="com.hezi.pojo.U">
-insert into u values(default,#{uname},#{upass})
-&lt;/insert>
-&lt;/mapper>
-#### 需要的jar包
-[Alt text](https://github.com/codehezi/test/blob/master/1.png?raw=true)
-</beans></web-app>
+&amp;lt;/select&gt;
+&amp;lt;select id=<span class="string">"sel1"</span> resultType=<span class="string">"com.hezi.pojo.U"</span> parameterType=<span class="string">"com.hezi.pojo.U"</span>&gt;
+select uname,upass from u <span class="built_in">where</span> uname=<span class="comment">#{uname} and upass=#{upass}</span>
+&amp;lt;/select&gt;
+&amp;lt;insert id=<span class="string">"ins"</span> parameterType=<span class="string">"com.hezi.pojo.U"</span>&gt;
+insert into u values(default,<span class="comment">#{uname},#{upass})</span>
+&amp;lt;/insert&gt;
+&amp;lt;/mapper&gt;</code></pre>
+<h4 id="需要的jar包"><a href="#需要的jar包" class="headerlink" title="需要的jar包"></a>需要的jar包</h4><pre><code class="bash">More info: [Deployment](https://github.com/codehezi/<span class="built_in">test</span>/blob/master/1.png?raw=<span class="literal">true</span>)</code></pre>
+
     </article>
     <!-- license  -->
     
@@ -472,7 +472,7 @@ insert into u values(default,#{uname},#{upass})
             <p>原文作者：<a href="http://yoursite.com">John Doe</a>
             <p>原文链接：<a href="http://yoursite.com/2019/07/04/first-blog/">http://yoursite.com/2019/07/04/first-blog/</a>
             <p>发表日期：<a href="http://yoursite.com/2019/07/04/first-blog/">July 4th 2019, 10:13:40 pm</a>
-            <p>更新日期：<a href="http://yoursite.com/2019/07/04/first-blog/">July 5th 2019, 6:08:58 am</a>
+            <p>更新日期：<a href="http://yoursite.com/2019/07/04/first-blog/">July 5th 2019, 6:17:34 am</a>
             <p>版权声明：本文采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p>
         </div>
     
@@ -604,7 +604,7 @@ top:50vh;
         <div class="toc-catalog">
             <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
         </div>
-        <ol class="toc"><li class="toc-item toc-level-5"><a class="toc-link" href="#web-xml中的配置："><span class="toc-number">1.</span> <span class="toc-text">web.xml中的配置：</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#web-xml中的配置："><span class="toc-number">1.</span> <span class="toc-text">web.xml中的配置：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#springmvc-servlet-xml文件配置"><span class="toc-number">2.</span> <span class="toc-text">springmvc-servlet.xml文件配置</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#mybatis-xml配置文件"><span class="toc-number">3.</span> <span class="toc-text">mybatis.xml配置文件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#com-hezi-mapper下的映射文件mapper-xml"><span class="toc-number">4.</span> <span class="toc-text">com.hezi.mapper下的映射文件mapper.xml</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#需要的jar包"><span class="toc-number">5.</span> <span class="toc-text">需要的jar包</span></a></li></ol>
     </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
