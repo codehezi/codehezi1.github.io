@@ -22,7 +22,7 @@
     <meta name="description" content>
     <meta http-equiv="Cache-control" content="no-cache">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>fi3ework&#39;s Studio</title>
+    <title>关于springmvc和mybatis的配置文件 · fi3ework&#39;s Studio</title>
     <style type="text/css">
     @font-face {
         font-family: 'Oswald-Regular';
@@ -217,7 +217,7 @@
                 <a href="/" >fi3ework&#39;s Studio.</a>
             </div>
             <div class="post-title">
-                <a href="#" class="post-name"></a>
+                <a href="#" class="post-name">关于springmvc和mybatis的配置文件</a>
             </div>
     </div>
     
@@ -247,7 +247,7 @@ height:50vh;
         <h1 class="intro-title">
             <!-- 主页  -->
             
-            [Untitled Post]
+            关于springmvc和mybatis的配置文件
             <!-- 404 -->
             
         </h1>
@@ -266,7 +266,7 @@ height:50vh;
                 
                 
                     <div class="post-intro-read">
-                        <span>字数统计: <span class="post-count word-count">361</span>阅读时长: <span class="post-count reading-time">2 min</span></span>
+                        <span>字数统计: <span class="post-count word-count">305</span>阅读时长: <span class="post-count reading-time">1 min</span></span>
                     </div>
                 
                 <div class="post-intro-meta">
@@ -395,19 +395,76 @@ height:50vh;
         <div class="container container-unloaded">
             <main class="main post-page">
     <article class="article-entry">
-        <hr>
-<h2 id="关于springmvc和mybatis的配置文件"><a href="#关于springmvc和mybatis的配置文件" class="headerlink" title="  关于springmvc和mybatis的配置文件"></a>  关于springmvc和mybatis的配置文件</h2><p>#####web.xml中的配置：<br>   <?xml version="1.0" encoding="UTF-8"?><br><web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" xsi:schemalocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0"><br> &lt;filter<br> &lt;filter-name&gt;characterEncodingFilter&lt;/filter-name&gt;<br>  &lt;filter-class&gt;org.springframework.web.filter.CharacterEncodingFilter&lt;/filter-class&gt;<br>  &lt;init-param&gt;<br>    &lt;param-name&gt;encoding&lt;/param-name&gt;<br>   &lt;param-value&gt;utf-8&lt;/param-value&gt;<br>  &lt;/init-param&gt;<br>  &lt;/filter&gt;<br>   &lt;filter-mapping&gt;<br>   &lt;filter-name&gt;characterEncodingFilter&lt;/filter-name&gt;<br>   &lt;url-pattern&gt;<em>.do&lt;/url-pattern&gt;<br>   &lt;/filter-mapping&gt;<br>  &lt;servlet&gt;<br>  &lt;servlet-name&gt;demo&lt;/servlet-name&gt;<br> &lt;servlet-class&gt;org.springframework.web.servlet.DispatcherServlet&lt;/servlet-class&gt;<br>  &lt;/servlet&gt;<br>  &lt;servlet-mapping&gt;<br>  &lt;servlet-name&gt;demo&lt;/servlet-name&gt;<br> &lt;url-pattern&gt;</em>.do&lt;/url-pattern&gt;<br>  &lt;/servlet-mapping&gt;<br>&lt;/web-app&gt;</web-app></p>
-<p>####springmvc-servlet.xml文件配置<br><?xml version="1.0" encoding="UTF-8"?><br><beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p" xmlns:context="http://www.springframework.org/schema/context" xsi:schemalocation="
+        <h5 id="web-xml中的配置："><a href="#web-xml中的配置：" class="headerlink" title="web.xml中的配置："></a>web.xml中的配置：</h5>   <?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" xsi:schemalocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
+ &lt;filter
+ &lt;filter-name>characterEncodingFilter&lt;/filter-name> 
+  &lt;filter-class>org.springframework.web.filter.CharacterEncodingFilter&lt;/filter-class>
+  &lt;init-param>
+    &lt;param-name>encoding&lt;/param-name>
+   &lt;param-value>utf-8&lt;/param-value>
+  &lt;/init-param>
+  &lt;/filter>
+   &lt;filter-mapping>
+   &lt;filter-name>characterEncodingFilter&lt;/filter-name>
+   &lt;url-pattern>*.do&lt;/url-pattern>
+   &lt;/filter-mapping>
+  &lt;servlet>
+  &lt;servlet-name>demo&lt;/servlet-name>
+ &lt;servlet-class>org.springframework.web.servlet.DispatcherServlet&lt;/servlet-class>
+  &lt;/servlet>
+  &lt;servlet-mapping>
+  &lt;servlet-name>demo&lt;/servlet-name>
+ &lt;url-pattern>*.do&lt;/url-pattern>
+  &lt;/servlet-mapping>
+&lt;/web-app>
+####springmvc-servlet.xml文件配置
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p" xmlns:context="http://www.springframework.org/schema/context" xsi:schemalocation="
         http://www.springframework.org/schema/beans
         http://www.springframework.org/schema/beans/spring-beans.xsd
         http://www.springframework.org/schema/context
-        http://www.springframework.org/schema/context/spring-context.xsd"><br>    &lt;context:component-scan base-package=”com.hezi.Controller”/&gt;<br>&lt;/beans&gt;</beans></p>
-<p>####mybatis.xml配置文件<br><?xml version="1.0" encoding="UTF-8"?><br><!DOCTYPE configuration
+        http://www.springframework.org/schema/context/spring-context.xsd">
+    &lt;context:component-scan base-package="com.hezi.Controller"/>
+&lt;/beans>
+#### mybatis.xml配置文件
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
   PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
-  "http://mybatis.org/dtd/mybatis-3-config.dtd"><br>&lt;configuration&gt;<br>&lt;environments default=”default”&gt;<br>&lt;environment id=”default”&gt;<br>&lt;transactionManager type=”JDBC”/&gt;<br>&lt;dataSource type=”POOLED”&gt;<br>  &lt;property name=”driver” value=”com.mysql.jdbc.Driver”/&gt;<br>  &lt;property name=”url” value=”jdbc:mysql://localhost:3306/student?characterEncoding=utf-8”/&gt;<br>  &lt;property name=”username” value=”root”/&gt;<br> &lt;property name=”password” value=”123456”/&gt;<br>&lt;/dataSource&gt;<br>&lt;/environment&gt;<br>&lt;/environments&gt;<br>&lt;mappers&gt;<br>&lt;mapper resource=”com/hezi/mapper/mapper.xml”/&gt;<br>&lt;/mappers&gt;<br>&lt;/configuration&gt;</p>
-<p>####com.hezi.mapper下的映射文件mapper.xml<br><?xml version="1.0" encoding="UTF-8"?><br><!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd"><br>&lt;mapper namespace=”com.hezi.mapper”&gt;<br>&lt;select id=”sel” resultType=”com.hezi.pojo.User”&gt;<br>select * from user<br>&lt;/select&gt;<br>&lt;select id=”sel1” resultType=”com.hezi.pojo.U” parameterType=”com.hezi.pojo.U”&gt;<br>select uname,upass from u where uname=#{uname} and upass=#{upass}<br>&lt;/select&gt;<br>&lt;insert id=”ins” parameterType=”com.hezi.pojo.U”&gt;<br>insert into u values(default,#{uname},#{upass})<br>&lt;/insert&gt;<br>&lt;/mapper&gt;</p>
-<p>####需要的jar包<br>![图片]<a href="https://github.com/codehezi/test/blob/master/1.png" target="_blank" rel="noopener">Alt text</a></p>
-
+  "http://mybatis.org/dtd/mybatis-3-config.dtd">
+&lt;configuration>
+&lt;environments default="default">
+&lt;environment id="default">
+&lt;transactionManager type="JDBC"/>
+&lt;dataSource type="POOLED">
+  &lt;property name="driver" value="com.mysql.jdbc.Driver"/>
+  &lt;property name="url" value="jdbc:mysql://localhost:3306/student?characterEncoding=utf-8"/>
+  &lt;property name="username" value="root"/>
+ &lt;property name="password" value="123456"/>
+&lt;/dataSource>
+&lt;/environment>
+&lt;/environments>
+&lt;mappers>
+&lt;mapper resource="com/hezi/mapper/mapper.xml"/>
+&lt;/mappers>
+&lt;/configuration>
+#### com.hezi.mapper下的映射文件mapper.xml
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+&lt;mapper namespace="com.hezi.mapper">
+&lt;select id="sel" resultType="com.hezi.pojo.User">
+select * from user 
+&lt;/select>
+&lt;select id="sel1" resultType="com.hezi.pojo.U" parameterType="com.hezi.pojo.U">
+select uname,upass from u where uname=#{uname} and upass=#{upass}
+&lt;/select>
+&lt;insert id="ins" parameterType="com.hezi.pojo.U">
+insert into u values(default,#{uname},#{upass})
+&lt;/insert>
+&lt;/mapper>
+#### 需要的jar包
+[Alt text](https://github.com/codehezi/test/blob/master/1.png?raw=true)
+</beans></web-app>
     </article>
     <!-- license  -->
     
@@ -415,7 +472,7 @@ height:50vh;
             <p>原文作者：<a href="http://yoursite.com">John Doe</a>
             <p>原文链接：<a href="http://yoursite.com/2019/07/04/first-blog/">http://yoursite.com/2019/07/04/first-blog/</a>
             <p>发表日期：<a href="http://yoursite.com/2019/07/04/first-blog/">July 4th 2019, 10:13:40 pm</a>
-            <p>更新日期：<a href="http://yoursite.com/2019/07/04/first-blog/">July 5th 2019, 6:03:55 am</a>
+            <p>更新日期：<a href="http://yoursite.com/2019/07/04/first-blog/">July 5th 2019, 6:08:58 am</a>
             <p>版权声明：本文采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p>
         </div>
     
@@ -547,7 +604,7 @@ top:50vh;
         <div class="toc-catalog">
             <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
         </div>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#关于springmvc和mybatis的配置文件"><span class="toc-number">1.</span> <span class="toc-text">  关于springmvc和mybatis的配置文件</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-5"><a class="toc-link" href="#web-xml中的配置："><span class="toc-number">1.</span> <span class="toc-text">web.xml中的配置：</span></a></li></ol>
     </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
@@ -596,7 +653,7 @@ top:50vh;
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">Invalid date</span><a class="archive-post-title" href= "/2019/07/04/first-blog/" >[Untitled Post]</a>
+            <span class="archive-post-date">Invalid date</span><a class="archive-post-title" href= "/2019/07/04/first-blog/" >关于springmvc和mybatis的配置文件</a>
         </li>
     
     
