@@ -352,7 +352,7 @@
         </a>
         <div class="abstract-content">
             
-title:  һЩ��������org.apache.catalina.LifecycleException���������Ȳ鿴һ��jar���Ƿ��У����jar��û���⣬��һ��xml�����Ƿ������⣬�����������û�д��������£�����Ŀ��Tomcat���Ƴ���Ȼ��Tomcat����cleanһ�£��ٴ�������Ŀ�Ϳ������������ˡ�springMVC�е�modelģ��modelģ���д�ŵ����ݾ�ֻ������ת��ȥ��ҳ��ʹ�ã�������request�����������������ȥ...
+title:  一些常见问题org.apache.catalina.LifecycleException问题解决首先查看一下jar包是否都有，如果jar包没问题，看一下xml配置是否有问题，如果都是正常没有错误的情况下，将项目从Tomcat上移除，然后将Tomcat进行clean一下，再次启动项目就可以正常运行了。springMVC中的model模型model模型中存放的数据就只能在跳转过去的页面使用，类似于request的请求，如果不传递下去也只能在请求页面使用，model模型也是类似特性，所以要想在一次会话中有要使用的数据的话，还是需要引入HttpSession，这是在使用spri...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
