@@ -1,97 +1,285 @@
-{% extends "_layout.njk" %}
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  
 
-{% block css %}
-<link rel="stylesheet" type="text/css" href="{{ url_for("css/page.css") }}">
-<link rel="stylesheet" type="text/css" href="{{ url_for("css/post.css") }}">
-{% endblock %}
-
-{% block title %}{{ config.title }}{% if config.subtitle %} - {{ config.subtitle }}{% endif %}{% endblock %}
-
-{% block content %}
-{% set comment = false %}
-<div id="index" class="index page">
-  {% for post in page.posts.toArray() %}
-  <article class="article post card{% if theme.animate %} animate{% endif %}" itemscope itemtype="http://schema.org/Article">
-    <div class="post-block">
-      <link itemprop="mainEntityOfPage" href="{{ config.url }}{{ url_for(post.path) }}">
-      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-        <meta itemprop="name" content="{{ config.author }}">
-        <meta itemprop="description" content="{{ config.description }}">
-        <meta itemprop="image" content="{{ url_for( theme.avatar) }}">
-      </span>
-      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-        <meta itemprop="name" content="{{ config.title }}">
-      </span>
-    </div>
-    <header class="post-header">
-      <h1 class="post-title" itemprop="name headline">
-        <a class="post-title-link post-title-link-external" href="{{ url_for(post.path) }}" itemprop="url">{{ post.title }}</a>
+  
+  <title>Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://yoursite.com/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:locale" content="default">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Hexo">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
       </h1>
-      <div class="post-meta">
-        {% if post.date %}
-        <span class="post-date">
-          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="{{ moment(post.date).format() }}">{{ date(post.date, config.date_format) }} {{ time(post.date, config.time_format) }}</time></span>
-        </span>
-        {% endif %}
-        {% if post.categories and post.categories.toArray().length %}
-        {% if post.date %}
-        <span class="post-meta-divider divider">|</span>
-        {% endif %}
-        <span class="post-categories">
-          {# About `-`: https://mozilla.github.io/nunjucks/cn/templating.html#part-861ece9d8e5ce60c #}
-          {% for cat in post.categories.toArray() -%}
-          {% if loop.first %}<i class="far fa-folder-open"></i>{% else %}<i class="fas fa-angle-right"></i>{% endif %}<span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="{{ url_for(cat.path) }}" itemprop="url" rel="index"><span itemprop="name">{{ cat.name }}</span></a></span>
-          {%- endfor %}
-        </span>
-        {% endif %}
-        {% if post.comment !== false and theme.comment.enable %}
-        {% if theme.comment.disqus_shortname %}
-        {% if post.categories or post.date %}
-        <span class="post-meta-divider divider">|</span>
-        {% endif %}
-        <span class="post-comment-count">
-          <i class="far fa-comments"></i><span><a href="{{ url_for(post.path) }}#disqus_thread" itemprop="discussionUrl"><span class="post-comment-count disqus-comment-count" data-disqus-identifier="{{ post.path }}" itemprop="commentCount"></span></a></span>
-        </span>
-        {% endif %}
-        {% endif %}
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
       </div>
-    </header>
-    <main class="post-main" itemprop="articleBody">
-      {% if post.excerpt  %}
-      {{ post.excerpt }}
-      {% elif post.description %}
-      {{ post.description }}
-      {% elif theme.auto_excerpt %}
-      {% set st_content = post.content | striptags %}
-      {{ st_content.substring(0, theme.auto_excerpt) }}
-      {% else %}
-      {{ post.content }}
-      {% endif %}
-    </main>
-    <footer class="post-footer">
-      {% if post.tags and post.tags.toArray().length %}
-      <div class="post-tags">
-        {% for tag in post.tags.toArray() %}
-        <a class="post-tag button" href="{{ url_for(tag.path) }}" rel="tag"><i class="fas fa-tags"></i>{{ tag.name }}</a>
-        {% endfor %}
-      </div>
-      {% endif %}
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main">
+  
+    <article id="post-two-blog" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/07/05/two-blog/" class="article-date">
+  <time datetime="2019-07-05T11:46:03.820Z" itemprop="datePublished">2019-07-05</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/07/05/two-blog/">一些常见问题</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="org-apache-catalina-LifecycleException问题解决"><a href="#org-apache-catalina-LifecycleException问题解决" class="headerlink" title="org.apache.catalina.LifecycleException问题解决"></a>org.apache.catalina.LifecycleException问题解决</h4><pre><code>首先查看一下jar包是否都有，如果jar包没问题，看一下xml配置是否有问题，如果都是正常没有错误的情况下，将项目从Tomcat上移除，然后将Tomcat进行clean一下，再次启动项目就可以正常运行了。</code></pre><h4 id="springMVC中的model模型"><a href="#springMVC中的model模型" class="headerlink" title="springMVC中的model模型"></a>springMVC中的model模型</h4><pre><code>model模型中存放的数据就只能在跳转过去的页面使用，类似于request的请求，如果不传递下去也只能在请求页面使用，model模型也是类似特性，所以要想在一次会话中有要使用的数据的话，还是需要引入HttpSession，这是在使用springmvc要注意的点。
+在modelMap在Myeclipse中可以使用，在eclipse使用会出现一些问题，在eclipse中一般就是用model模型。    </code></pre>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/07/05/two-blog/" data-id="cjxq1sgh80000o8fm2xvdvs48" class="article-share-link">Share</a>
+      
+      
     </footer>
-  </article>
-  {% endfor %}
-  {% if page.prev or page.next %}
-  <nav class="pagination">
-    {{
-      paginator({
-        prev_text: "<i class=\"fas fa-angle-left\" aria-label=\"" + __("accessibility.prev_page") + "\"></i>",
-        next_text: "<i class=\"fas fa-angle-right\" aria-label=\"" + __("accessibility.next_page") + "\"></i>",
-        mid_size: 1
-      })
-    }}
-  </nav>
-  {% endif %}
-  {% if theme.comment.enable %}
-  {% include "comment.njk" %}
-  {% endif %}
-</div>
-{% endblock %}
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-first-blog" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/07/04/first-blog/" class="article-date">
+  <time datetime="2019-07-04T14:13:40.724Z" itemprop="datePublished">2019-07-04</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/07/04/first-blog/">关于springmvc和mybatis的配置文件</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="web-xml中的配置："><a href="#web-xml中的配置：" class="headerlink" title="web.xml中的配置："></a>web.xml中的配置：</h4><pre><code class="bash">   &lt;?xml version=<span class="string">"1.0"</span> encoding=<span class="string">"UTF-8"</span>?&gt;
+&lt;web-app xmlns:xsi=<span class="string">"http://www.w3.org/2001/XMLSchema-instance"</span> xmlns=<span class="string">"http://java.sun.com/xml/ns/javaee"</span> xmlns:web=<span class="string">"http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"</span> xsi:schemaLocation=<span class="string">"http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"</span> id=<span class="string">"WebApp_ID"</span> version=<span class="string">"3.0"</span>&gt;
+ &lt;filter&gt;
+&lt;filter-name&gt;characterEncodingFilter&amp;lt;/filter-name&gt; 
+  &lt;filter-class&gt;org.springframework.web.filter.CharacterEncodingFilter&amp;lt;/filter-class&gt;
+  &lt;init-param&gt;
+  &lt;param-name&gt;encoding&amp;lt;/param-name&gt;
+  &lt;param-value&gt;utf-8&amp;lt;/param-value&gt;
+  &lt;/init-param&gt;
+  &lt;/filter&gt;
+ &lt;filter-mapping&gt;
+   &lt;filter-name&gt;characterEncodingFilter&amp;lt;/filter-name&gt;
+   &lt;url-pattern&gt;*.<span class="keyword">do</span>&amp;lt;/url-pattern&gt;
+   &lt;/filter-mapping&gt;
+ &lt;servlet&gt;
+ &lt;servlet-name&gt;demo&amp;lt;/servlet-name&gt;
+ &lt;servlet-class&gt;org.springframework.web.servlet.DispatcherServlet&amp;lt;/servlet-class&gt;
+  &lt;/servlet&gt;
+  &lt;servlet-mapping&gt;
+&lt;servlet-name&gt;demo&amp;lt;/servlet-name&gt;
+ &lt;url-pattern&gt;*.<span class="keyword">do</span>&amp;lt;/url-pattern&gt;
+  &lt;/servlet-mapping&gt;
+&lt;/web-app&gt;</code></pre>
+<h4 id="springmvc-servlet-xml文件配置"><a href="#springmvc-servlet-xml文件配置" class="headerlink" title="springmvc-servlet.xml文件配置"></a>springmvc-servlet.xml文件配置</h4><pre><code class="bash">&lt;?xml version=<span class="string">"1.0"</span> encoding=<span class="string">"UTF-8"</span>?&gt;
+&lt;beans xmlns=<span class="string">"http://www.springframework.org/schema/beans"</span>
+    xmlns:xsi=<span class="string">"http://www.w3.org/2001/XMLSchema-instance"</span>
+    xmlns:p=<span class="string">"http://www.springframework.org/schema/p"</span>
+    xmlns:context=<span class="string">"http://www.springframework.org/schema/context"</span>
+    xsi:schemaLocation=<span class="string">"</span>
+<span class="string">        http://www.springframework.org/schema/beans</span>
+<span class="string">        http://www.springframework.org/schema/beans/spring-beans.xsd</span>
+<span class="string">        http://www.springframework.org/schema/context</span>
+<span class="string">        http://www.springframework.org/schema/context/spring-context.xsd"</span>&gt;
+    &lt;context:component-scan base-package=<span class="string">"com.hezi.Controller"</span>/&gt;
+&lt;/beans&gt;</code></pre>
+<h4 id="mybatis-xml配置文件"><a href="#mybatis-xml配置文件" class="headerlink" title="mybatis.xml配置文件"></a>mybatis.xml配置文件</h4><pre><code class="bash">&lt;?xml version=<span class="string">"1.0"</span> encoding=<span class="string">"UTF-8"</span>?&gt;
+&lt;!DOCTYPE configuration
+  PUBLIC <span class="string">"-//mybatis.org//DTD Config 3.0//EN"</span>
+  <span class="string">"http://mybatis.org/dtd/mybatis-3-config.dtd"</span>&gt;
+&lt;configuration&gt;
+&lt;environments default=<span class="string">"default"</span>&gt;
+&lt;environment id=<span class="string">"default"</span>&gt;
+&lt;transactionManager <span class="built_in">type</span>=<span class="string">"JDBC"</span>/&gt;
+&lt;dataSource <span class="built_in">type</span>=<span class="string">"POOLED"</span>&gt;
+  &lt;property name=<span class="string">"driver"</span> value=<span class="string">"com.mysql.jdbc.Driver"</span>/&gt;
+  &lt;property name=<span class="string">"url"</span> value=<span class="string">"jdbc:mysql://localhost:3306/student?characterEncoding=utf-8"</span>/&gt;
+  &lt;property name=<span class="string">"username"</span> value=<span class="string">"root"</span>/&gt;
+  &lt;property name=<span class="string">"password"</span> value=<span class="string">"123456"</span>/&gt;
+&lt;/dataSource&gt;
+&lt;/environment&gt;
+&lt;/environments&gt;
+&lt;mappers&gt;
+&lt;mapper resource=<span class="string">"com/hezi/mapper/mapper.xml"</span>/&gt;
+&lt;/mappers&gt;
+&lt;/configuration&gt;</code></pre>
+<h4 id="com-hezi-mapper下的映射文件mapper-xml"><a href="#com-hezi-mapper下的映射文件mapper-xml" class="headerlink" title="com.hezi.mapper下的映射文件mapper.xml"></a>com.hezi.mapper下的映射文件mapper.xml</h4><pre><code class="bash">&lt;?xml version=<span class="string">"1.0"</span> encoding=<span class="string">"UTF-8"</span>?&gt;
+&lt;!DOCTYPE mapper PUBLIC <span class="string">"-//mybatis.org//DTD Mapper 3.0//EN"</span> <span class="string">"http://mybatis.org/dtd/mybatis-3-mapper.dtd"</span>&gt;
+&lt;mapper namespace=<span class="string">"com.hezi.mapper"</span>&gt;
+&lt;select id=<span class="string">"sel"</span> resultType=<span class="string">"com.hezi.pojo.User"</span>&gt;
+select * from user 
+&lt;/select&gt;
+&lt;select id=<span class="string">"sel1"</span> resultType=<span class="string">"com.hezi.pojo.U"</span> parameterType=<span class="string">"com.hezi.pojo.U"</span>&gt;
+select uname,upass from u <span class="built_in">where</span> uname=<span class="comment">#{uname} and upass=#{upass}</span>
+&lt;/select&gt;
+&lt;insert id=<span class="string">"ins"</span> parameterType=<span class="string">"com.hezi.pojo.U"</span>&gt;
+insert into u values(default,<span class="comment">#{uname},#{upass})</span>
+&lt;/insert&gt;
+&lt;/mapper&gt;</code></pre>
+<h4 id="需要的jar包"><a href="#需要的jar包" class="headerlink" title="需要的jar包"></a>需要的jar包</h4><p><a href="./1.png">Alt text</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/07/04/first-blog/" data-id="cjxp7x3yj00005wfmtqtzdrb8" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">July 2019</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/07/05/two-blog/">一些常见问题</a>
+          </li>
+        
+          <li>
+            <a href="/2019/07/04/first-blog/">关于springmvc和mybatis的配置文件</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>
