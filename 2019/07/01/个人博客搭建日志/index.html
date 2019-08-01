@@ -41,7 +41,7 @@
   <body>
     
 
-<header class="blog-slide" style="height: 230px">
+<header class="blog-slide" style="height: px">
   <nav class="blog-header">
     <a class="mobile toggle-button"><i class="fas fa-bars fa-lg"></i></a>
     <ul>
@@ -53,7 +53,7 @@
       
     </ul>
   </nav>
-  <h1 class="subtitle"><span id='jinrishici-sentence'>Archives</span></h1>
+  <h1 class="subtitle"><span id='jinrishici-sentence'></span></h1>
 </header>
     <nav id="menu">
   
@@ -63,61 +63,90 @@
   
 </nav>
     
-    <main class="blog-main" style="margin-top: 50px">
-      <section class="blog-archive">
+    <main class="blog-main" style="margin-top: -150px">
+      <article class="blog-post">
+  
+
+  <div class="post-content">
+    <div class="post-header">
+      
+        
+  
+    <h1 class="post-title">
+      <a href="/codehezi.github.io/2019/07/01/个人博客搭建日志/">
+        博客搭建
+      </a>
+    </h1>
+  
+
+<div class="post-meta">
+  2019-07-01
   
   
-    <div class="archive-year">
-      <h2 class="archive-title"><i class="fas fa-archive"></i>2019</h2>
-      <div class="articles">
+</div>
+
       
-        <div class="articles-content">
-            <time class="is-text-small" datetime="2019-07-31T13:41:29.107Z" itemprop="datePublished">07-31</time>
-            <a href="/codehezi.github.io/2019/07/31/six-blog/">springboot整合spring data jpa(续)</a>
-        </div>
+    </div>
+    <div class="post-detail">
+      
+        <ul>
+<li><p>第一步：注册GitHub账号。</p>
+</li>
+<li><p>第二步：下载Git和node js。</p>
+</li>
+<li><p>第三部：打开git bash here命令窗口，下载hexo</p>
+<ul>
+<li>命令如下：<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g hexo-cli</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>第四步：进入任意盘创下的hexo/blog文件下，进入git bash here输入命令初始化hexo，命令：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo init</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>第五步：安装一些hexo的依赖包，命令如下：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo install</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>第六步：安装一下hexo依赖的插件，命令如下：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install  hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>第七步：在GitHub上创建新的仓库，并且写上Repository name：username.github.io(命名规范)；然后复制仓库地址，在blog文件夹下的-config.yml中找到</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Deployment在deploy下配置：</span></span><br><span class="line">       <span class="built_in">type</span>：（前面注意有个空格）git</span><br><span class="line">       repo：（前面注意有个空格）https://github.com/codehezi/codehezi.github.io.git---这是哪个仓库HTTP地址</span><br><span class="line">       branch：（前面注意有个空格）master</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>第八步：将hexo部署到github上去，命令如下：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo g -d</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>第九步：访问hexo，命令如下：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">codehezi.github.io</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+
         <hr>
       
-        <div class="articles-content">
-            <time class="is-text-small" datetime="2019-07-31T11:41:23.951Z" itemprop="datePublished">07-31</time>
-            <a href="/codehezi.github.io/2019/07/31/five-blog/">springboot整合spring-data-jpa</a>
-        </div>
-        <hr>
+    </div>
+
+    
       
-        <div class="articles-content">
-            <time class="is-text-small" datetime="2019-07-29T12:15:55.207Z" itemprop="datePublished">07-29</time>
-            <a href="/codehezi.github.io/2019/07/29/four-blog/">springboot整合hibernate-validate</a>
-        </div>
-        <hr>
+    
+
+    
       
-        <div class="articles-content">
-            <time class="is-text-small" datetime="2019-07-29T08:58:41.689Z" itemprop="datePublished">07-29</time>
-            <a href="/codehezi.github.io/2019/07/29/three-blog/">springboot整合spring data redis</a>
-        </div>
-        <hr>
-      
-        <div class="articles-content">
-            <time class="is-text-small" datetime="2019-07-05T11:46:03.820Z" itemprop="datePublished">07-05</time>
-            <a href="/codehezi.github.io/2019/07/05/two-blog/">一些常见问题</a>
-        </div>
-        <hr>
-      
-        <div class="articles-content">
-            <time class="is-text-small" datetime="2019-07-04T14:13:40.724Z" itemprop="datePublished">07-04</time>
-            <a href="/codehezi.github.io/2019/07/04/first-blog/">关于springmvc和mybatis的配置文件</a>
-        </div>
-        <hr>
-      
-        <div class="articles-content">
-            <time class="is-text-small" datetime="2019-07-01T02:17:28.604Z" itemprop="datePublished">07-01</time>
-            <a href="/codehezi.github.io/2019/07/01/个人博客搭建日志/">博客搭建</a>
-        </div>
-        <hr>
-      
-      </div>
+  
+
+      <div class="post-more">
+  
+    <div class="post-pre">
+      <span>previous</span>
+      <a href="/codehezi.github.io/2019/07/04/first-blog/">关于springmvc和mybatis的配置文件</a>
     </div>
   
   
-</section>
+</div>
+      
+    
+  </div>
+</article>
+
     </main>
     
     <div class="back-to-top" id="back-to-top"><i class="fas fa-arrow-alt-circle-up fa-2x"></i></div>
