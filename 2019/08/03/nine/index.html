@@ -1,0 +1,221 @@
+
+
+<html lang="">
+  <head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <meta http-equiv="Cache-Control" content="no-transform">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+
+  <meta name="theme-color" content="#42dbbc">
+  <meta name="msapplication-navbutton-color" content="#f8f5ec">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+  
+  
+  
+    <link rel="shortcut icon" type="image/x-icon" href="/codehezi.github.io/images/favicon.ico">
+  
+
+  <title>Hexo</title>
+
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+
+  
+    <link rel="stylesheet" type="text/css" href="/codehezi.github.io/lib/fancybox/jquery.fancybox.css">
+  
+
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-light.min.css">
+
+  <link rel="stylesheet" href="/codehezi.github.io/css/style.css">
+
+  
+
+  <script>
+    window.config = {"title":"Hexo","subtitle":"About Me","description":null,"author":"John Doe","language":null,"timezone":null,"url":"http://yoursite.com","root":"/codehezi.github.io/","permalink":":year/:month/:day/:title/","permalink_defaults":null,"source_dir":"source","public_dir":"public","tag_dir":"tags","archive_dir":"archives","category_dir":"categories","code_dir":"downloads/code","i18n_dir":":lang","skip_render":null,"new_post_name":":title.md","default_layout":"post","titlecase":false,"external_link":true,"filename_case":0,"render_drafts":false,"post_asset_folder":false,"relative_link":false,"future":true,"highlight":"atom-one-light","default_category":"uncategorized","category_map":null,"tag_map":null,"date_format":"YYYY-MM-DD","time_format":"HH:mm:ss","per_page":10,"pagination_dir":"page","theme":"cicada","deploy":{"type":"git","repo":"https://github.com/codehezi/codehezi.github.io.git","branch":"master"},"ignore":[],"keywords":null,"index_generator":{"per_page":10,"order_by":"-date","path":""},"archive_generator":{"per_page":10,"yearly":true,"monthly":true,"daily":false},"category_generator":{"per_page":10},"tag_generator":{"per_page":10},"marked":{"gfm":true,"pedantic":false,"sanitize":false,"tables":true,"breaks":true,"smartLists":true,"smartypants":true,"modifyAnchors":"","autolink":true},"server":{"port":4000,"log":false,"compress":false,"header":true},"favicon":"/images/favicon.ico","menu":{"home":"/","archives":"/archives"},"show_tag":true,"show_category":false,"excerpt_link":"Read More","fancybox":true,"disqus_shortname":null,"rss":"default","social":{"email":"2297142423@qq.com","instagram":"dasd","douban":"das","linkedin":"dsa","weibo":null,"stackoverflow":null,"facebook":null,"twitter":null,"github":"www.github.com/codehezi","google":null,"zhihu":null,"pocket":null},"friends":{"Hezi's Blog":"https://codehezi.github.io"},"google_analytics":null,"portfolio":{"subtitle":"Some Works","cards":{"card1":{"cover":"/images/screenshot.png","content":"Cicada is a concise and retro Hexo theme.","link":"https://github.com/Kexin-Li/hexo-theme-cicada"},"card2":{"cover":"/images/screenshot.png","content":"Cicada is a Hexo theme, it tastes like summer.","link":"http://kexin-li.github.io"},"card3":{"cover":"/images/screenshot.png","content":"Cicada is a Hexo theme, it tastes like summer.","link":"http://kexin-li.github.io"}}},"about":null,"poem":false};
+  </script>
+</head>
+  <body>
+    
+
+<header class="blog-slide" style="height: px">
+  <nav class="blog-header">
+    <a class="mobile toggle-button"><i class="fas fa-bars fa-lg"></i></a>
+    <ul>
+      <li class="title"><a href="/">Hexo</a></li>
+      
+        <li class="nav-item"><a href="/codehezi.github.io/">Home</a></li>
+      
+        <li class="nav-item"><a href="/codehezi.github.io/archives">Archives</a></li>
+      
+    </ul>
+  </nav>
+  <h1 class="subtitle"><span id='jinrishici-sentence'></span></h1>
+</header>
+    <nav id="menu">
+  
+    <a href="/codehezi.github.io/">Home</a>
+  
+    <a href="/codehezi.github.io/archives">Archives</a>
+  
+</nav>
+    
+    <main class="blog-main" style="margin-top: -150px">
+      <article class="blog-post">
+  
+
+  <div class="post-content">
+    <div class="post-header">
+      
+        
+  
+    <h1 class="post-title">
+      <a href="/codehezi.github.io/2019/08/03/nine/">
+        springboot 整合 spring data (一对多和多对多【整合hibernate】)
+      </a>
+    </h1>
+  
+
+<div class="post-meta">
+  2019-08-03
+  
+  
+</div>
+
+      
+    </div>
+    <div class="post-detail">
+      
+        <ul>
+<li><p>pom文件</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line">&lt;project xmlns=<span class="string">"http://maven.apache.org/POM/4.0.0"</span> xmlns:xsi=<span class="string">"http://www.w3.org/2001/XMLSchema-instance"</span> xsi:schemaLocation=<span class="string">"http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"</span>&gt;</span><br><span class="line">  &lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt;</span><br><span class="line">  &lt;parent&gt;</span><br><span class="line">    &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;spring-boot-starter-parent&lt;/artifactId&gt;</span><br><span class="line">    &lt;version&gt;1.5.10.RELEASE&lt;/version&gt;</span><br><span class="line">  &lt;/parent&gt;</span><br><span class="line">  &lt;groupId&gt;com.hezi&lt;/groupId&gt;</span><br><span class="line">  &lt;artifactId&gt;17-springboot-spring-data-jpa2&lt;/artifactId&gt;</span><br><span class="line">  &lt;version&gt;0.0.1-SNAPSHOT&lt;/version&gt;</span><br><span class="line">  &lt;dependencies&gt;</span><br><span class="line">     &lt;!-- springboot启动器 --&gt;</span><br><span class="line">    &lt;dependency&gt;</span><br><span class="line">         &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;</span><br><span class="line">         &lt;artifactId&gt;spring-boot-starter-web&lt;/artifactId&gt;</span><br><span class="line">    &lt;/dependency&gt;</span><br><span class="line">      &lt;!-- spring data jpa启动器 --&gt;</span><br><span class="line">    &lt;dependency&gt;</span><br><span class="line">         &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;</span><br><span class="line">         &lt;artifactId&gt;spring-boot-starter-data-jpa&lt;/artifactId&gt;</span><br><span class="line">    &lt;/dependency&gt;</span><br><span class="line">     &lt;!-- junit启动器 --&gt;</span><br><span class="line">    &lt;dependency&gt;</span><br><span class="line">         &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;</span><br><span class="line">         &lt;artifactId&gt;spring-boot-starter-test&lt;/artifactId&gt;</span><br><span class="line">    &lt;/dependency&gt;</span><br><span class="line">    &lt;!-- 连接数据库mysql --&gt;</span><br><span class="line">      &lt;dependency&gt;</span><br><span class="line">         &lt;groupId&gt;mysql&lt;/groupId&gt;</span><br><span class="line">         &lt;artifactId&gt;mysql-connector-java&lt;/artifactId&gt;</span><br><span class="line">      &lt;/dependency&gt;</span><br><span class="line">       &lt;!-- 数据库连接池 --&gt;</span><br><span class="line">       &lt;dependency&gt;</span><br><span class="line">         &lt;groupId&gt;com.alibaba&lt;/groupId&gt;</span><br><span class="line">         &lt;artifactId&gt;druid&lt;/artifactId&gt;</span><br><span class="line">         &lt;version&gt;1.0.9&lt;/version&gt;</span><br><span class="line">      &lt;/dependency&gt;</span><br><span class="line">  &lt;/dependencies&gt;</span><br><span class="line">&lt;/project&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>application.xml全局配置文件</p>
+</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">spring.datasource.driverClassName=com.mysql.jdbc.Driver</span><br><span class="line">spring.datasource.url=jdbc:mysql://localhost:3306/student?characterEncoding=UTF-8</span><br><span class="line">spring.datasource.username=root</span><br><span class="line">spring.datasource.password=123456</span><br><span class="line"></span><br><span class="line">spring.datasource.type=com.alibaba.druid.pool.DruidDataSource</span><br><span class="line"></span><br><span class="line">spring.jpa.hibernate.ddl-auto=update</span><br><span class="line"></span><br><span class="line">spring.jpa.show-sql=<span class="literal">true</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>pojo类</li>
+</ul>
+<p>1  一对多的（User）</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br></pre></td><td class="code"><pre><span class="line">package com.hezi.pojo;</span><br><span class="line"></span><br><span class="line">import java.io.Serializable;</span><br><span class="line">import java.util.HashSet;</span><br><span class="line">import java.util.Set;</span><br><span class="line"></span><br><span class="line">import javax.persistence.CascadeType;</span><br><span class="line">import javax.persistence.Column;</span><br><span class="line">import javax.persistence.Entity;</span><br><span class="line">import javax.persistence.GeneratedValue;</span><br><span class="line">import javax.persistence.GenerationType;</span><br><span class="line">import javax.persistence.Id;</span><br><span class="line">import javax.persistence.JoinColumn;</span><br><span class="line">import javax.persistence.JoinColumns;</span><br><span class="line">import javax.persistence.JoinTable;</span><br><span class="line">import javax.persistence.ManyToMany;</span><br><span class="line">import javax.persistence.ManyToOne;</span><br><span class="line">import javax.persistence.Table;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">@Entity</span><br><span class="line">@Table(name=<span class="string">"t_users"</span>)</span><br><span class="line">public class User implements Serializable&#123;</span><br><span class="line">  @Id</span><br><span class="line">  @GeneratedValue(strategy=GenerationType.IDENTITY)</span><br><span class="line">  @Column(name=<span class="string">"id"</span>)</span><br><span class="line">  private Integer id;</span><br><span class="line">  @Column(name=<span class="string">"age"</span>)</span><br><span class="line">  private Integer age;</span><br><span class="line">  @Column(name=<span class="string">"name"</span>)</span><br><span class="line">  private String name;</span><br><span class="line">  @ManyToOne(cascade=CascadeType.PERSIST)</span><br><span class="line">  //JoinColumn就是用来维护两者之前的关系</span><br><span class="line">  @JoinColumn(name=<span class="string">"role_id"</span>)</span><br><span class="line">  private Role role;</span><br><span class="line">public Integer <span class="function"><span class="title">getId</span></span>() &#123;</span><br><span class="line">	<span class="built_in">return</span> id;</span><br><span class="line">&#125;</span><br><span class="line">public void setId(Integer id) &#123;</span><br><span class="line">	this.id = id;</span><br><span class="line">&#125;</span><br><span class="line">public Integer <span class="function"><span class="title">getAge</span></span>() &#123;</span><br><span class="line">	<span class="built_in">return</span> age;</span><br><span class="line">&#125;</span><br><span class="line">public void setAge(Integer age) &#123;</span><br><span class="line">	this.age = age;</span><br><span class="line">&#125;</span><br><span class="line">public String <span class="function"><span class="title">getName</span></span>() &#123;</span><br><span class="line">	<span class="built_in">return</span> name;</span><br><span class="line">&#125;</span><br><span class="line">public void setName(String name) &#123;</span><br><span class="line">	this.name = name;</span><br><span class="line">&#125;</span><br><span class="line">public Role <span class="function"><span class="title">getRole</span></span>() &#123;</span><br><span class="line">	<span class="built_in">return</span> role;</span><br><span class="line">&#125;</span><br><span class="line">public void setRole(Role role) &#123;</span><br><span class="line">	this.role = role;</span><br><span class="line">&#125;</span><br><span class="line">@Override</span><br><span class="line">public String <span class="function"><span class="title">toString</span></span>() &#123;</span><br><span class="line">	<span class="built_in">return</span> <span class="string">"User [id="</span> + id + <span class="string">", age="</span> + age + <span class="string">", name="</span> + name + <span class="string">"]"</span>;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>  2 （Role）</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line">package com.hezi.pojo;</span><br><span class="line"></span><br><span class="line">import java.io.Serializable;</span><br><span class="line">import java.util.HashSet;</span><br><span class="line">import java.util.Set;</span><br><span class="line"></span><br><span class="line">import javax.persistence.Column;</span><br><span class="line">import javax.persistence.Entity;</span><br><span class="line">import javax.persistence.GeneratedValue;</span><br><span class="line">import javax.persistence.GenerationType;</span><br><span class="line">import javax.persistence.Id;</span><br><span class="line">import javax.persistence.OneToMany;</span><br><span class="line">import javax.persistence.Table;</span><br><span class="line"></span><br><span class="line">@Entity</span><br><span class="line">@Table(name=<span class="string">"t_role"</span>)</span><br><span class="line">public class Role implements Serializable&#123;</span><br><span class="line">	@Id</span><br><span class="line">	@GeneratedValue(strategy=GenerationType.IDENTITY)</span><br><span class="line">	@Column(name=<span class="string">"rid"</span>)</span><br><span class="line">   private Integer rid;</span><br><span class="line">    @Column(name=<span class="string">"rname"</span>)</span><br><span class="line">   private String rname;</span><br><span class="line">    @OneToMany(mappedBy=<span class="string">"role"</span>)</span><br><span class="line">   private Set&lt;User&gt; user=new HashSet&lt;&gt;();</span><br><span class="line">	public Set&lt;User&gt; <span class="function"><span class="title">getUser</span></span>() &#123;</span><br><span class="line">		<span class="built_in">return</span> user;</span><br><span class="line">	&#125;</span><br><span class="line">	public void setUser(Set&lt;User&gt; user) &#123;</span><br><span class="line">		this.user = user;</span><br><span class="line">	&#125;</span><br><span class="line">	public Integer <span class="function"><span class="title">getRid</span></span>() &#123;</span><br><span class="line">		<span class="built_in">return</span> rid;</span><br><span class="line">	&#125;</span><br><span class="line">	public void setRid(Integer rid) &#123;</span><br><span class="line">		this.rid = rid;</span><br><span class="line">	&#125;</span><br><span class="line">	public String <span class="function"><span class="title">getRname</span></span>() &#123;</span><br><span class="line">		<span class="built_in">return</span> rname;</span><br><span class="line">	&#125;</span><br><span class="line">	public void setRname(String rname) &#123;</span><br><span class="line">		this.rname = rname;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+<p> 3  多对多（Roles）</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br></pre></td><td class="code"><pre><span class="line">package com.hezi.pojo;</span><br><span class="line"></span><br><span class="line">import java.util.HashSet;</span><br><span class="line">import java.util.Set;</span><br><span class="line"></span><br><span class="line">import javax.persistence.CascadeType;</span><br><span class="line">import javax.persistence.Column;</span><br><span class="line">import javax.persistence.Entity;</span><br><span class="line">import javax.persistence.FetchType;</span><br><span class="line">import javax.persistence.GeneratedValue;</span><br><span class="line">import javax.persistence.GenerationType;</span><br><span class="line">import javax.persistence.Id;</span><br><span class="line">import javax.persistence.JoinColumn;</span><br><span class="line">import javax.persistence.JoinTable;</span><br><span class="line">import javax.persistence.ManyToMany;</span><br><span class="line">import javax.persistence.Table;</span><br><span class="line"></span><br><span class="line">@Entity</span><br><span class="line">@Table(name=<span class="string">"t_roles"</span>)</span><br><span class="line">public class Roles &#123;</span><br><span class="line">  @Id</span><br><span class="line">  @GeneratedValue(strategy=GenerationType.IDENTITY)</span><br><span class="line">  @Column(name=<span class="string">"rid"</span>)</span><br><span class="line">  private Integer rid;</span><br><span class="line">  @Column(name=<span class="string">"rname"</span>)</span><br><span class="line">  private String rname;</span><br><span class="line">  @Column(name=<span class="string">"rstate"</span>)</span><br><span class="line">  private String rstate;</span><br><span class="line">  @ManyToMany(cascade=CascadeType.PERSIST,fetch=FetchType.EAGER)</span><br><span class="line">  //FetchType.EAGER:及时加载</span><br><span class="line">  //JoinTable:映射的中间表</span><br><span class="line">  //joinColumns:当前表中的主键所关联的中间表的外键</span><br><span class="line">  //inverseJoinColumns:另一张表的主键所关联的中间表的外键</span><br><span class="line">  @JoinTable(name=<span class="string">"t_roles_meun"</span>,joinColumns=@JoinColumn(name=<span class="string">"roles_id"</span>),inverseJoinColumns=@JoinColumn(name=<span class="string">"meun_id"</span>))</span><br><span class="line">  private Set&lt;Meun&gt; meun=new HashSet&lt;&gt;();</span><br><span class="line">public Integer <span class="function"><span class="title">getRid</span></span>() &#123;</span><br><span class="line">	<span class="built_in">return</span> rid;</span><br><span class="line">&#125;</span><br><span class="line">public void setRid(Integer rid) &#123;</span><br><span class="line">	this.rid = rid;</span><br><span class="line">&#125;</span><br><span class="line">public String <span class="function"><span class="title">getRname</span></span>() &#123;</span><br><span class="line">	<span class="built_in">return</span> rname;</span><br><span class="line">&#125;</span><br><span class="line">public void setRname(String rname) &#123;</span><br><span class="line">	this.rname = rname;</span><br><span class="line">&#125;</span><br><span class="line">public String <span class="function"><span class="title">getRstate</span></span>() &#123;</span><br><span class="line">	<span class="built_in">return</span> rstate;</span><br><span class="line">&#125;</span><br><span class="line">public void setRstate(String rstate) &#123;</span><br><span class="line">	this.rstate = rstate;</span><br><span class="line">&#125;</span><br><span class="line">public Set&lt;Meun&gt; <span class="function"><span class="title">getMeun</span></span>() &#123;</span><br><span class="line">	<span class="built_in">return</span> meun;</span><br><span class="line">&#125;</span><br><span class="line">public void setMeun(Set&lt;Meun&gt; meun) &#123;</span><br><span class="line">	this.meun = meun;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>  4 （Meun）</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line">package com.hezi.pojo;</span><br><span class="line"></span><br><span class="line">import java.io.Serializable;</span><br><span class="line">import java.util.HashSet;</span><br><span class="line">import java.util.Set;</span><br><span class="line"></span><br><span class="line">import javax.persistence.Column;</span><br><span class="line">import javax.persistence.Entity;</span><br><span class="line">import javax.persistence.GeneratedValue;</span><br><span class="line">import javax.persistence.GenerationType;</span><br><span class="line">import javax.persistence.Id;</span><br><span class="line">import javax.persistence.ManyToMany;</span><br><span class="line">import javax.persistence.Table;</span><br><span class="line"></span><br><span class="line">@Entity</span><br><span class="line">@Table(name=<span class="string">"t_meun"</span>)</span><br><span class="line">public class Meun implements Serializable&#123;</span><br><span class="line">    @Id</span><br><span class="line">    @GeneratedValue(strategy=GenerationType.IDENTITY)</span><br><span class="line">    @Column(name=<span class="string">"mid"</span>)</span><br><span class="line">	private Integer mid;</span><br><span class="line">    @Column(name=<span class="string">"mname"</span>)</span><br><span class="line">    private String mname;</span><br><span class="line">    @ManyToMany(mappedBy=<span class="string">"meun"</span>)</span><br><span class="line">    private Set&lt;Roles&gt; roles=new HashSet&lt;&gt;();</span><br><span class="line">	public Integer <span class="function"><span class="title">getMid</span></span>() &#123;</span><br><span class="line">		<span class="built_in">return</span> mid;</span><br><span class="line">	&#125;</span><br><span class="line">	public void setMid(Integer mid) &#123;</span><br><span class="line">		this.mid = mid;</span><br><span class="line">	&#125;</span><br><span class="line">	public String <span class="function"><span class="title">getMname</span></span>() &#123;</span><br><span class="line">		<span class="built_in">return</span> mname;</span><br><span class="line">	&#125;</span><br><span class="line">	public void setMname(String mname) &#123;</span><br><span class="line">		this.mname = mname;</span><br><span class="line">	&#125;</span><br><span class="line">	public Set&lt;Roles&gt; <span class="function"><span class="title">getRoles</span></span>() &#123;</span><br><span class="line">		<span class="built_in">return</span> roles;</span><br><span class="line">	&#125;</span><br><span class="line">	public void setRoles(Set&lt;Roles&gt; roles) &#123;</span><br><span class="line">		this.roles = roles;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>测试类</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br></pre></td><td class="code"><pre><span class="line">package com.hezi.test;</span><br><span class="line"></span><br><span class="line">import java.util.Set;</span><br><span class="line"></span><br><span class="line">import org.junit.Test;</span><br><span class="line">import org.junit.runner.RunWith;</span><br><span class="line">import org.springframework.beans.factory.annotation.Autowired;</span><br><span class="line">import org.springframework.boot.test.context.SpringBootTest;</span><br><span class="line">import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;</span><br><span class="line"></span><br><span class="line">import com.hezi.Dao.rolesDao;</span><br><span class="line">import com.hezi.Dao.userDao;</span><br><span class="line">import com.hezi.controller.App;</span><br><span class="line">import com.hezi.pojo.Meun;</span><br><span class="line">import com.hezi.pojo.Role;</span><br><span class="line">import com.hezi.pojo.Roles;</span><br><span class="line">import com.hezi.pojo.User;</span><br><span class="line"></span><br><span class="line">@RunWith(SpringJUnit4ClassRunner.class)</span><br><span class="line">@SpringBootTest(classes= &#123;App.class&#125;)</span><br><span class="line">public class <span class="built_in">test</span> &#123;</span><br><span class="line">    @Autowired</span><br><span class="line">    private userDao userDao;</span><br><span class="line">    @Autowired</span><br><span class="line">    private rolesDao rolesDao;</span><br><span class="line">    /*</span><br><span class="line">     * 测试一对多添加</span><br><span class="line">     */</span><br><span class="line">    @Test</span><br><span class="line">    public void <span class="function"><span class="title">testAdd</span></span>() &#123;</span><br><span class="line">    	//创建用户</span><br><span class="line">    	User u=new User();</span><br><span class="line">    	u.setAge(21);</span><br><span class="line">    	u.setName(<span class="string">"王六"</span>);</span><br><span class="line">    	//创建角色</span><br><span class="line">    	Role r=new Role();</span><br><span class="line">    	r.setRname(<span class="string">"项目经理"</span>);</span><br><span class="line">    	//关联</span><br><span class="line">    	r.getUser().add(u);</span><br><span class="line">    	u.setRole(r);</span><br><span class="line">    	//保存</span><br><span class="line">    	this.userDao.save(u);</span><br><span class="line">    &#125;</span><br><span class="line">    /*</span><br><span class="line">     * 测试一对多添加</span><br><span class="line">     */</span><br><span class="line">    @Test</span><br><span class="line">    public void <span class="function"><span class="title">testOnetoManyFind</span></span>() &#123;</span><br><span class="line">      User u=this.userDao.findOne(1);   	</span><br><span class="line">    	System.out.println(u.getName());</span><br><span class="line">    	Role r=u.getRole();</span><br><span class="line">    	System.out.println(r.getRname());</span><br><span class="line">    &#125;</span><br><span class="line">    /*</span><br><span class="line">     * 测试多对多</span><br><span class="line">     */</span><br><span class="line">    @Test</span><br><span class="line">    public void <span class="function"><span class="title">testManyToMany</span></span>() &#123;</span><br><span class="line">    	//创建用户</span><br><span class="line">    	Roles r=new Roles();</span><br><span class="line">    	r.setRname(<span class="string">"王六"</span>);</span><br><span class="line">    	r.setRstate(<span class="string">"优秀"</span>);</span><br><span class="line">    	//创建菜单</span><br><span class="line">    	Meun m=new Meun();</span><br><span class="line">    	m.setMname(<span class="string">"主任务"</span>);</span><br><span class="line">    	Meun m1=new Meun();</span><br><span class="line">    	m1.setMname(<span class="string">"次任务"</span>);</span><br><span class="line">    	//关联</span><br><span class="line">    	m.getRoles().add(r);</span><br><span class="line">    	m1.getRoles().add(r);</span><br><span class="line">    	r.getMeun().add(m1);</span><br><span class="line">    	r.getMeun().add(m);</span><br><span class="line">    	//保存</span><br><span class="line">    	this.rolesDao.save(r);</span><br><span class="line">    &#125;</span><br><span class="line">     /*</span><br><span class="line">      * 测试多对多查询</span><br><span class="line">      */</span><br><span class="line">     @Test</span><br><span class="line">     public void <span class="function"><span class="title">testFind</span></span>() &#123;</span><br><span class="line">    	  Roles roles=this.rolesDao.findOne(2);</span><br><span class="line">    	  System.out.println(roles.getRname());</span><br><span class="line">    	  Set&lt;Meun&gt; <span class="built_in">set</span>=roles.getMeun();</span><br><span class="line">    	  <span class="keyword">for</span> (Meun meun : <span class="built_in">set</span>) &#123;</span><br><span class="line">			  System.out.println(meun.getMname());</span><br><span class="line">		&#125;</span><br><span class="line">     &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>注意：这里多对多的操作在查询的时候可能会出现session关闭的现象，这个是由于hibernate默认是懒加载的原因，在执行多对多通过一个表查询另一个表的数据时要加上”fetch=FetchType.EAGER”，将延时加载改为及时加载，<br>这样就可以消除session关闭的异常.</li>
+</ul>
+
+        <hr>
+      
+    </div>
+
+    
+      
+    
+
+    
+      
+  
+
+      <div class="post-more">
+  
+  
+  <div class="post-next">
+    <span>next</span>
+    <a href="/codehezi.github.io/2019/08/02/eight/">springboot 整合spring data jpa（接口类编写）</a>
+  </div>
+  
+</div>
+      
+    
+  </div>
+</article>
+
+    </main>
+    
+    <div class="back-to-top" id="back-to-top"><i class="fas fa-arrow-alt-circle-up fa-2x"></i></div>
+
+    <footer class="blog-footer">
+  
+
+
+<hr>
+<div class="blog-footer-friends">
+  <p class="title">FRIENDS</p>
+  <div class="friends">
+  
+    <a href="https://codehezi.github.io" target="_blank">Hezi&#39;s Blog</a>
+  
+  </div>
+</div>
+
+  
+
+
+  <div class="blog-footer-social">
+    <ul>
+      
+        
+          <li><a class="iconfont icon-email" href="mailto:2297142423@qq.com"></a></li>
+        
+      
+        
+          <li><a class="iconfont icon-instagram" href="dasd"></a></li>
+        
+      
+        
+          <li><a class="iconfont icon-douban" href="das"></a></li>
+        
+      
+        
+          <li><a class="iconfont icon-linkedin" href="dsa"></a></li>
+        
+      
+        
+          <li><a class="iconfont icon-github" href="www.github.com/codehezi"></a></li>
+        
+      
+      
+        
+        <li><a class="iconfont icon-rss" href="/codehezi.github.io/atom.xml"></a></li>
+      
+    </ul>
+  </div>
+ 
+  <div class="blog-footer-copyright">
+  <p class="copyright">Copyright © 2018 John Doe. Powered by <a href="https://hexo.io/">Hexo</a> and <a href="https://github.com/Kexin-Li/hexo-theme-cicada">Cicada</a>. <iframe src="https://ghbtns.com/github-btn.html?user=Kexin-Li&repo=hexo-theme-cicada&type=star&count=false&size=small" frameborder="0" scrolling="0" width="58px" height="30px" style="margin-bottom: -15px"></iframe></p>
+</div>
+</footer>
+
+<script type="text/javascript" src="/codehezi.github.io/lib/jquery/jquery.min.js"></script>
+
+
+  <script type="text/javascript" src="/codehezi.github.io/lib/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<!--  -->
+
+
+
+
+<script type="text/javascript" src="/codehezi.github.io/js/cicada.js"></script>
+  </body>
+</html>
