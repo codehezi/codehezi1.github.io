@@ -74,6 +74,106 @@
         
   
     <h1 class="post-title">
+      <a href="/codehezi.github.io/2019/07/04/first-blog/">
+        关于springmvc和mybatis的配置文件
+      </a>
+    </h1>
+  
+
+      
+    </div>
+    <div class="post-detail">
+      
+        <h4 id="web-xml中的配置："><a href="#web-xml中的配置：" class="headerlink" title="web.xml中的配置："></a>web.xml中的配置：</h4><pre><code class="bash">   &lt;?xml version=<span class="string">"1.0"</span> encoding=<span class="string">"UTF-8"</span>?&gt;
+&lt;web-app xmlns:xsi=<span class="string">"http://www.w3.org/2001/XMLSchema-instance"</span> xmlns=<span class="string">"http://java.sun.com/xml/ns/javaee"</span> xmlns:web=<span class="string">"http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"</span> xsi:schemaLocation=<span class="string">"http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"</span> id=<span class="string">"WebApp_ID"</span> version=<span class="string">"3.0"</span>&gt;
+ &lt;filter&gt;
+&lt;filter-name&gt;characterEncodingFilter&amp;lt;/filter-name&gt; 
+  &lt;filter-class&gt;org.springframework.web.filter.CharacterEncodingFilter&amp;lt;/filter-class&gt;
+  &lt;init-param&gt;
+  &lt;param-name&gt;encoding&amp;lt;/param-name&gt;
+  &lt;param-value&gt;utf-8&amp;lt;/param-value&gt;
+  &lt;/init-param&gt;
+  &lt;/filter&gt;
+ &lt;filter-mapping&gt;
+   &lt;filter-name&gt;characterEncodingFilter&amp;lt;/filter-name&gt;
+   &lt;url-pattern&gt;*.<span class="keyword">do</span>&amp;lt;/url-pattern&gt;
+   &lt;/filter-mapping&gt;
+ &lt;servlet&gt;
+ &lt;servlet-name&gt;demo&amp;lt;/servlet-name&gt;
+ &lt;servlet-class&gt;org.springframework.web.servlet.DispatcherServlet&amp;lt;/servlet-class&gt;
+  &lt;/servlet&gt;
+  &lt;servlet-mapping&gt;
+&lt;servlet-name&gt;demo&amp;lt;/servlet-name&gt;
+ &lt;url-pattern&gt;*.<span class="keyword">do</span>&amp;lt;/url-pattern&gt;
+  &lt;/servlet-mapping&gt;
+&lt;/web-app&gt;</code></pre>
+<h4 id="springmvc-servlet-xml文件配置"><a href="#springmvc-servlet-xml文件配置" class="headerlink" title="springmvc-servlet.xml文件配置"></a>springmvc-servlet.xml文件配置</h4><pre><code class="bash">&lt;?xml version=<span class="string">"1.0"</span> encoding=<span class="string">"UTF-8"</span>?&gt;
+&lt;beans xmlns=<span class="string">"http://www.springframework.org/schema/beans"</span>
+    xmlns:xsi=<span class="string">"http://www.w3.org/2001/XMLSchema-instance"</span>
+    xmlns:p=<span class="string">"http://www.springframework.org/schema/p"</span>
+    xmlns:context=<span class="string">"http://www.springframework.org/schema/context"</span>
+    xsi:schemaLocation=<span class="string">"</span>
+<span class="string">        http://www.springframework.org/schema/beans</span>
+<span class="string">        http://www.springframework.org/schema/beans/spring-beans.xsd</span>
+<span class="string">        http://www.springframework.org/schema/context</span>
+<span class="string">        http://www.springframework.org/schema/context/spring-context.xsd"</span>&gt;
+    &lt;context:component-scan base-package=<span class="string">"com.hezi.Controller"</span>/&gt;
+&lt;/beans&gt;</code></pre>
+<h4 id="mybatis-xml配置文件"><a href="#mybatis-xml配置文件" class="headerlink" title="mybatis.xml配置文件"></a>mybatis.xml配置文件</h4><pre><code class="bash">&lt;?xml version=<span class="string">"1.0"</span> encoding=<span class="string">"UTF-8"</span>?&gt;
+&lt;!DOCTYPE configuration
+  PUBLIC <span class="string">"-//mybatis.org//DTD Config 3.0//EN"</span>
+  <span class="string">"http://mybatis.org/dtd/mybatis-3-config.dtd"</span>&gt;
+&lt;configuration&gt;
+&lt;environments default=<span class="string">"default"</span>&gt;
+&lt;environment id=<span class="string">"default"</span>&gt;
+&lt;transactionManager <span class="built_in">type</span>=<span class="string">"JDBC"</span>/&gt;
+&lt;dataSource <span class="built_in">type</span>=<span class="string">"POOLED"</span>&gt;
+  &lt;property name=<span class="string">"driver"</span> value=<span class="string">"com.mysql.jdbc.Driver"</span>/&gt;
+  &lt;property name=<span class="string">"url"</span> value=<span class="string">"jdbc:mysql://localhost:3306/student?characterEncoding=utf-8"</span>/&gt;
+  &lt;property name=<span class="string">"username"</span> value=<span class="string">"root"</span>/&gt;
+  &lt;property name=<span class="string">"password"</span> value=<span class="string">"123456"</span>/&gt;
+&lt;/dataSource&gt;
+&lt;/environment&gt;
+&lt;/environments&gt;
+&lt;mappers&gt;
+&lt;mapper resource=<span class="string">"com/hezi/mapper/mapper.xml"</span>/&gt;
+&lt;/mappers&gt;
+&lt;/configuration&gt;</code></pre>
+<h4 id="com-hezi-mapper下的映射文件mapper-xml"><a href="#com-hezi-mapper下的映射文件mapper-xml" class="headerlink" title="com.hezi.mapper下的映射文件mapper.xml"></a>com.hezi.mapper下的映射文件mapper.xml</h4><pre><code class="bash">&lt;?xml version=<span class="string">"1.0"</span> encoding=<span class="string">"UTF-8"</span>?&gt;
+&lt;!DOCTYPE mapper PUBLIC <span class="string">"-//mybatis.org//DTD Mapper 3.0//EN"</span> <span class="string">"http://mybatis.org/dtd/mybatis-3-mapper.dtd"</span>&gt;
+&lt;mapper namespace=<span class="string">"com.hezi.mapper"</span>&gt;
+&lt;select id=<span class="string">"sel"</span> resultType=<span class="string">"com.hezi.pojo.User"</span>&gt;
+select * from user 
+&lt;/select&gt;
+&lt;select id=<span class="string">"sel1"</span> resultType=<span class="string">"com.hezi.pojo.U"</span> parameterType=<span class="string">"com.hezi.pojo.U"</span>&gt;
+select uname,upass from u <span class="built_in">where</span> uname=<span class="comment">#{uname} and upass=#{upass}</span>
+&lt;/select&gt;
+&lt;insert id=<span class="string">"ins"</span> parameterType=<span class="string">"com.hezi.pojo.U"</span>&gt;
+insert into u values(default,<span class="comment">#{uname},#{upass})</span>
+&lt;/insert&gt;
+&lt;/mapper&gt;</code></pre>
+<h4 id="需要的jar包"><a href="#需要的jar包" class="headerlink" title="需要的jar包"></a>需要的jar包</h4><p><img src="https://note.youdao.com/yws/api/personal/file/EE7D7D89E9FC425FA1621B9FFE99E768?method=download&shareKey=583d3c54a3e93ee9b57adca437ea9c8c" alt="image"></p>
+
+        <hr>
+      
+    </div>
+
+    
+
+    
+  </div>
+</article>
+
+
+    <article class="blog-post">
+  
+
+  <div class="post-content">
+    <div class="post-header">
+      
+        
+  
+    <h1 class="post-title">
       <a href="/codehezi.github.io/2019/07/01/个人博客搭建日志/">
         博客搭建
       </a>

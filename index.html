@@ -74,6 +74,43 @@
         
   
     <h1 class="post-title">
+      <a href="/codehezi.github.io/2019/08/08/eleven/">
+        schedule定时器在springboot中的用法
+      </a>
+    </h1>
+  
+
+      
+    </div>
+    <div class="post-detail">
+      
+        <h2 id="pom文件"><a href="#pom文件" class="headerlink" title="pom文件"></a>pom文件</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">&lt;project xmlns=<span class="string">"http://maven.apache.org/POM/4.0.0"</span> xmlns:xsi=<span class="string">"http://www.w3.org/2001/XMLSchema-instance"</span> xsi:schemaLocation=<span class="string">"http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"</span>&gt;</span><br><span class="line">  &lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt;</span><br><span class="line">  &lt;parent&gt;</span><br><span class="line">    &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;spring-boot-starter-parent&lt;/artifactId&gt;</span><br><span class="line">    &lt;version&gt;1.5.10.RELEASE&lt;/version&gt;</span><br><span class="line">  &lt;/parent&gt;</span><br><span class="line">  &lt;groupId&gt;com.hezi&lt;/groupId&gt;</span><br><span class="line">  &lt;artifactId&gt;18-springboot-ehcache&lt;/artifactId&gt;</span><br><span class="line">  &lt;version&gt;0.0.1-SNAPSHOT&lt;/version&gt;</span><br><span class="line">  &lt;dependencies&gt;</span><br><span class="line">     &lt;!-- springboot启动器 --&gt;</span><br><span class="line">    &lt;dependency&gt;</span><br><span class="line">         &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;</span><br><span class="line">         &lt;artifactId&gt;spring-boot-starter-web&lt;/artifactId&gt;</span><br><span class="line">    &lt;/dependency&gt;</span><br><span class="line">     &lt;!-- junit启动器 --&gt;</span><br><span class="line">    &lt;dependency&gt;</span><br><span class="line">         &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;</span><br><span class="line">         &lt;artifactId&gt;spring-boot-starter-test&lt;/artifactId&gt;</span><br><span class="line">    &lt;/dependency&gt;</span><br><span class="line">     &lt;!-- schedule的坐 标 --&gt;</span><br><span class="line">    &lt;dependency&gt;</span><br><span class="line">         &lt;groupId&gt;org.springframework&lt;/groupId&gt;</span><br><span class="line">         &lt;artifactId&gt;spring-context-support&lt;/artifactId&gt;</span><br><span class="line">    &lt;/dependency&gt;</span><br><span class="line">    </span><br><span class="line">  &lt;/dependencies&gt;</span><br><span class="line">&lt;/project&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="启动器"><a href="#启动器" class="headerlink" title="启动器"></a>启动器</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">package com.hezi.controller;</span><br><span class="line"></span><br><span class="line">import org.springframework.boot.SpringApplication;</span><br><span class="line">import org.springframework.boot.autoconfigure.SpringBootApplication;</span><br><span class="line">import org.springframework.context.annotation.ComponentScan;</span><br><span class="line">import org.springframework.scheduling.annotation.EnableScheduling;</span><br><span class="line">/*</span><br><span class="line"> * @ComponentScan:就是告诉spring去哪里找bean对象进行调用</span><br><span class="line"> */</span><br><span class="line">@SpringBootApplication</span><br><span class="line">@EnableScheduling</span><br><span class="line">@ComponentScan(basePackages= &#123;<span class="string">"com.hezi.controller"</span>,<span class="string">"com.hezi.scheduleTest"</span>&#125;)</span><br><span class="line">public class App &#123; </span><br><span class="line">   public static void main(String[] args) &#123;</span><br><span class="line">	 SpringApplication.run(App.class, args);</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="测试类"><a href="#测试类" class="headerlink" title="测试类"></a>测试类</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">package com.hezi.scheduleTest;</span><br><span class="line"></span><br><span class="line">import java.util.Date;</span><br><span class="line"></span><br><span class="line">import org.springframework.scheduling.annotation.Scheduled;</span><br><span class="line">import org.springframework.stereotype.Component;</span><br><span class="line"></span><br><span class="line">/*</span><br><span class="line"> * @Component:将普通的javabean实例化到spring容器中</span><br><span class="line"> */</span><br><span class="line">@Component</span><br><span class="line">public class <span class="built_in">test</span> &#123;</span><br><span class="line">	/*</span><br><span class="line">	 *@Scheduled:设定任务定时器</span><br><span class="line">	 * cron属性: cron表达式：是时间的一个字符串表达形式</span><br><span class="line">	 * 注意:在cron表达式中，星期和天是有冲突的，所以星期和天一般只选取一个，用“？”做占位符</span><br><span class="line">	 * 放在哪个位置哪个就空出来不用</span><br><span class="line">	 * ？:表示占位符</span><br><span class="line">	 * *:表示任意的时间</span><br><span class="line">	 * -:表示一个范围（1-3）表示在这范围内都会执行</span><br><span class="line">	 * ，:逗号，表示和的关系1,3，就表示1和3都会执行</span><br><span class="line">	 * <span class="string">"/"</span>:斜杆表示步长，0/2，就表示每两秒执行一次，0是起始值</span><br><span class="line">	 */</span><br><span class="line">  @Scheduled(cron=<span class="string">"0/3 * * * * ?"</span>)</span><br><span class="line">  public void <span class="function"><span class="title">scheduledTest</span></span>() &#123;</span><br><span class="line">	  System.out.println(<span class="string">"测试schedule"</span>+new Date());</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+        <hr>
+      
+    </div>
+
+    
+
+    
+  </div>
+</article>
+
+
+    <article class="blog-post">
+  
+
+  <div class="post-content">
+    <div class="post-header">
+      
+        
+  
+    <h1 class="post-title">
       <a href="/codehezi.github.io/2019/08/04/ten/">
         springboot整合ehcache
       </a>
@@ -538,106 +575,6 @@
       
         <h4 id="org-apache-catalina-LifecycleException问题解决"><a href="#org-apache-catalina-LifecycleException问题解决" class="headerlink" title="org.apache.catalina.LifecycleException问题解决"></a>org.apache.catalina.LifecycleException问题解决</h4><pre><code>首先查看一下jar包是否都有，如果jar包没问题，看一下xml配置是否有问题，如果都是正常没有错误的情况下，将项目从Tomcat上移除，然后将Tomcat进行clean一下，再次启动项目就可以正常运行了。</code></pre><h4 id="springMVC中的model模型"><a href="#springMVC中的model模型" class="headerlink" title="springMVC中的model模型"></a>springMVC中的model模型</h4><pre><code>model模型中存放的数据就只能在跳转过去的页面使用，类似于request的请求，如果不传递下去也只能在请求页面使用，model模型也是类似特性，所以要想在一次会话中有要使用的数据的话，还是需要引入HttpSession，这是在使用springmvc要注意的点。
 在modelMap在Myeclipse中可以使用，在eclipse使用会出现一些问题，在eclipse中一般就是用model模型。    </code></pre>
-        <hr>
-      
-    </div>
-
-    
-
-    
-  </div>
-</article>
-
-
-    <article class="blog-post">
-  
-
-  <div class="post-content">
-    <div class="post-header">
-      
-        
-  
-    <h1 class="post-title">
-      <a href="/codehezi.github.io/2019/07/04/first-blog/">
-        关于springmvc和mybatis的配置文件
-      </a>
-    </h1>
-  
-
-      
-    </div>
-    <div class="post-detail">
-      
-        <h4 id="web-xml中的配置："><a href="#web-xml中的配置：" class="headerlink" title="web.xml中的配置："></a>web.xml中的配置：</h4><pre><code class="bash">   &lt;?xml version=<span class="string">"1.0"</span> encoding=<span class="string">"UTF-8"</span>?&gt;
-&lt;web-app xmlns:xsi=<span class="string">"http://www.w3.org/2001/XMLSchema-instance"</span> xmlns=<span class="string">"http://java.sun.com/xml/ns/javaee"</span> xmlns:web=<span class="string">"http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"</span> xsi:schemaLocation=<span class="string">"http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"</span> id=<span class="string">"WebApp_ID"</span> version=<span class="string">"3.0"</span>&gt;
- &lt;filter&gt;
-&lt;filter-name&gt;characterEncodingFilter&amp;lt;/filter-name&gt; 
-  &lt;filter-class&gt;org.springframework.web.filter.CharacterEncodingFilter&amp;lt;/filter-class&gt;
-  &lt;init-param&gt;
-  &lt;param-name&gt;encoding&amp;lt;/param-name&gt;
-  &lt;param-value&gt;utf-8&amp;lt;/param-value&gt;
-  &lt;/init-param&gt;
-  &lt;/filter&gt;
- &lt;filter-mapping&gt;
-   &lt;filter-name&gt;characterEncodingFilter&amp;lt;/filter-name&gt;
-   &lt;url-pattern&gt;*.<span class="keyword">do</span>&amp;lt;/url-pattern&gt;
-   &lt;/filter-mapping&gt;
- &lt;servlet&gt;
- &lt;servlet-name&gt;demo&amp;lt;/servlet-name&gt;
- &lt;servlet-class&gt;org.springframework.web.servlet.DispatcherServlet&amp;lt;/servlet-class&gt;
-  &lt;/servlet&gt;
-  &lt;servlet-mapping&gt;
-&lt;servlet-name&gt;demo&amp;lt;/servlet-name&gt;
- &lt;url-pattern&gt;*.<span class="keyword">do</span>&amp;lt;/url-pattern&gt;
-  &lt;/servlet-mapping&gt;
-&lt;/web-app&gt;</code></pre>
-<h4 id="springmvc-servlet-xml文件配置"><a href="#springmvc-servlet-xml文件配置" class="headerlink" title="springmvc-servlet.xml文件配置"></a>springmvc-servlet.xml文件配置</h4><pre><code class="bash">&lt;?xml version=<span class="string">"1.0"</span> encoding=<span class="string">"UTF-8"</span>?&gt;
-&lt;beans xmlns=<span class="string">"http://www.springframework.org/schema/beans"</span>
-    xmlns:xsi=<span class="string">"http://www.w3.org/2001/XMLSchema-instance"</span>
-    xmlns:p=<span class="string">"http://www.springframework.org/schema/p"</span>
-    xmlns:context=<span class="string">"http://www.springframework.org/schema/context"</span>
-    xsi:schemaLocation=<span class="string">"</span>
-<span class="string">        http://www.springframework.org/schema/beans</span>
-<span class="string">        http://www.springframework.org/schema/beans/spring-beans.xsd</span>
-<span class="string">        http://www.springframework.org/schema/context</span>
-<span class="string">        http://www.springframework.org/schema/context/spring-context.xsd"</span>&gt;
-    &lt;context:component-scan base-package=<span class="string">"com.hezi.Controller"</span>/&gt;
-&lt;/beans&gt;</code></pre>
-<h4 id="mybatis-xml配置文件"><a href="#mybatis-xml配置文件" class="headerlink" title="mybatis.xml配置文件"></a>mybatis.xml配置文件</h4><pre><code class="bash">&lt;?xml version=<span class="string">"1.0"</span> encoding=<span class="string">"UTF-8"</span>?&gt;
-&lt;!DOCTYPE configuration
-  PUBLIC <span class="string">"-//mybatis.org//DTD Config 3.0//EN"</span>
-  <span class="string">"http://mybatis.org/dtd/mybatis-3-config.dtd"</span>&gt;
-&lt;configuration&gt;
-&lt;environments default=<span class="string">"default"</span>&gt;
-&lt;environment id=<span class="string">"default"</span>&gt;
-&lt;transactionManager <span class="built_in">type</span>=<span class="string">"JDBC"</span>/&gt;
-&lt;dataSource <span class="built_in">type</span>=<span class="string">"POOLED"</span>&gt;
-  &lt;property name=<span class="string">"driver"</span> value=<span class="string">"com.mysql.jdbc.Driver"</span>/&gt;
-  &lt;property name=<span class="string">"url"</span> value=<span class="string">"jdbc:mysql://localhost:3306/student?characterEncoding=utf-8"</span>/&gt;
-  &lt;property name=<span class="string">"username"</span> value=<span class="string">"root"</span>/&gt;
-  &lt;property name=<span class="string">"password"</span> value=<span class="string">"123456"</span>/&gt;
-&lt;/dataSource&gt;
-&lt;/environment&gt;
-&lt;/environments&gt;
-&lt;mappers&gt;
-&lt;mapper resource=<span class="string">"com/hezi/mapper/mapper.xml"</span>/&gt;
-&lt;/mappers&gt;
-&lt;/configuration&gt;</code></pre>
-<h4 id="com-hezi-mapper下的映射文件mapper-xml"><a href="#com-hezi-mapper下的映射文件mapper-xml" class="headerlink" title="com.hezi.mapper下的映射文件mapper.xml"></a>com.hezi.mapper下的映射文件mapper.xml</h4><pre><code class="bash">&lt;?xml version=<span class="string">"1.0"</span> encoding=<span class="string">"UTF-8"</span>?&gt;
-&lt;!DOCTYPE mapper PUBLIC <span class="string">"-//mybatis.org//DTD Mapper 3.0//EN"</span> <span class="string">"http://mybatis.org/dtd/mybatis-3-mapper.dtd"</span>&gt;
-&lt;mapper namespace=<span class="string">"com.hezi.mapper"</span>&gt;
-&lt;select id=<span class="string">"sel"</span> resultType=<span class="string">"com.hezi.pojo.User"</span>&gt;
-select * from user 
-&lt;/select&gt;
-&lt;select id=<span class="string">"sel1"</span> resultType=<span class="string">"com.hezi.pojo.U"</span> parameterType=<span class="string">"com.hezi.pojo.U"</span>&gt;
-select uname,upass from u <span class="built_in">where</span> uname=<span class="comment">#{uname} and upass=#{upass}</span>
-&lt;/select&gt;
-&lt;insert id=<span class="string">"ins"</span> parameterType=<span class="string">"com.hezi.pojo.U"</span>&gt;
-insert into u values(default,<span class="comment">#{uname},#{upass})</span>
-&lt;/insert&gt;
-&lt;/mapper&gt;</code></pre>
-<h4 id="需要的jar包"><a href="#需要的jar包" class="headerlink" title="需要的jar包"></a>需要的jar包</h4><p><img src="https://note.youdao.com/yws/api/personal/file/EE7D7D89E9FC425FA1621B9FFE99E768?method=download&shareKey=583d3c54a3e93ee9b57adca437ea9c8c" alt="image"></p>
-
         <hr>
       
     </div>
