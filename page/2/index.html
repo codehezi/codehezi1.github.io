@@ -74,6 +74,38 @@
         
   
     <h1 class="post-title">
+      <a href="/codehezi.github.io/2019/07/05/two-blog/">
+        一些常见问题
+      </a>
+    </h1>
+  
+
+      
+    </div>
+    <div class="post-detail">
+      
+        <h4 id="org-apache-catalina-LifecycleException问题解决"><a href="#org-apache-catalina-LifecycleException问题解决" class="headerlink" title="org.apache.catalina.LifecycleException问题解决"></a>org.apache.catalina.LifecycleException问题解决</h4><pre><code>首先查看一下jar包是否都有，如果jar包没问题，看一下xml配置是否有问题，如果都是正常没有错误的情况下，将项目从Tomcat上移除，然后将Tomcat进行clean一下，再次启动项目就可以正常运行了。</code></pre><h4 id="springMVC中的model模型"><a href="#springMVC中的model模型" class="headerlink" title="springMVC中的model模型"></a>springMVC中的model模型</h4><pre><code>model模型中存放的数据就只能在跳转过去的页面使用，类似于request的请求，如果不传递下去也只能在请求页面使用，model模型也是类似特性，所以要想在一次会话中有要使用的数据的话，还是需要引入HttpSession，这是在使用springmvc要注意的点。
+在modelMap在Myeclipse中可以使用，在eclipse使用会出现一些问题，在eclipse中一般就是用model模型。    </code></pre>
+        <hr>
+      
+    </div>
+
+    
+
+    
+  </div>
+</article>
+
+
+    <article class="blog-post">
+  
+
+  <div class="post-content">
+    <div class="post-header">
+      
+        
+  
+    <h1 class="post-title">
       <a href="/codehezi.github.io/2019/07/04/first-blog/">
         关于springmvc和mybatis的配置文件
       </a>

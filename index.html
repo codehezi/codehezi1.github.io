@@ -74,6 +74,44 @@
         
   
     <h1 class="post-title">
+      <a href="/codehezi.github.io/2019/08/09/twelve/">
+        Quartz在javase中的简单使用
+      </a>
+    </h1>
+  
+
+      
+    </div>
+    <div class="post-detail">
+      
+        <h2 id="实现类"><a href="#实现类" class="headerlink" title="实现类"></a>实现类</h2><ul>
+<li>必须实现JOb接口</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">package com.hezi.quartz;</span><br><span class="line">import java.util.Date;</span><br><span class="line">import org.quartz.Job;</span><br><span class="line">import org.quartz.JobExecutionContext;</span><br><span class="line">import org.quartz.JobExecutionException;</span><br><span class="line">public class QuartzDemo implements Job &#123;</span><br><span class="line">   /*</span><br><span class="line">    * 重写的这个方法就是在方法被触发时执行</span><br><span class="line">    */</span><br><span class="line">	@Override</span><br><span class="line">	public void execute(JobExecutionContext arg0) throws JobExecutionException &#123;</span><br><span class="line">           System.out.println(<span class="string">"测试quartz"</span>+new Date());</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="测试类"><a href="#测试类" class="headerlink" title="测试类"></a>测试类</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">package com.hezi.quartz;</span><br><span class="line">import org.quartz.CronScheduleBuilder;</span><br><span class="line">import org.quartz.JobBuilder;</span><br><span class="line">import org.quartz.JobDetail;</span><br><span class="line">import org.quartz.ScheduleBuilder;</span><br><span class="line">import org.quartz.Scheduler;</span><br><span class="line">import org.quartz.SchedulerException;</span><br><span class="line">import org.quartz.SchedulerFactory;</span><br><span class="line">import org.quartz.SimpleScheduleBuilder;</span><br><span class="line">import org.quartz.Trigger;</span><br><span class="line">import org.quartz.TriggerBuilder;</span><br><span class="line">import org.quartz.impl.StdSchedulerFactory;</span><br><span class="line">/*</span><br><span class="line"> * 测试quartz</span><br><span class="line"> */</span><br><span class="line">public class <span class="built_in">test</span> &#123;</span><br><span class="line">     public static void main(String[] args) throws Exception &#123;</span><br><span class="line">    	 //创建job</span><br><span class="line">		  JobDetail job=JobBuilder.newJob(QuartzDemo.class).build();</span><br><span class="line">         //创建trigger</span><br><span class="line">		  /*</span><br><span class="line">		   * trigger的第一种简单方式，使用SSimpleScheduleBuilder这个类中定义好的简单方法进行使用</span><br><span class="line">		   */</span><br><span class="line">		 //Trigger trigger=TriggerBuilder.newTrigger().withSchedule(SimpleScheduleBuilder.repeatSecondlyForever()).build();</span><br><span class="line">			 </span><br><span class="line">		  /*</span><br><span class="line">		   * trigger的第二种方法，就是使用CronScheduleBuilder下的cronSchedule(<span class="string">"0/2 * * * * ?"</span>)方法，用cron表达式进行自定义</span><br><span class="line">		   */</span><br><span class="line">		  Trigger trigger=TriggerBuilder.newTrigger().withSchedule(CronScheduleBuilder.cronSchedule(<span class="string">"0/2 * * * * ?"</span>)).build();</span><br><span class="line"></span><br><span class="line">        //放入scheduler</span><br><span class="line">		  Scheduler scheduler=StdSchedulerFactory.getDefaultScheduler();</span><br><span class="line">		  scheduler.scheduleJob(job, trigger);</span><br><span class="line">		//启动scheduler </span><br><span class="line">		  scheduler.start();</span><br><span class="line">     &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+        <hr>
+      
+    </div>
+
+    
+
+    
+  </div>
+</article>
+
+
+    <article class="blog-post">
+  
+
+  <div class="post-content">
+    <div class="post-header">
+      
+        
+  
+    <h1 class="post-title">
       <a href="/codehezi.github.io/2019/08/08/eleven/">
         schedule定时器在springboot中的用法
       </a>
@@ -543,38 +581,6 @@
 <h2 id="pom文件"><a href="#pom文件" class="headerlink" title="pom文件"></a>pom文件</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line">&lt;project xmlns=<span class="string">"http://maven.apache.org/POM/4.0.0"</span> xmlns:xsi=<span class="string">"http://www.w3.org/2001/XMLSchema-instance"</span> xsi:schemaLocation=<span class="string">"http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"</span>&gt;</span><br><span class="line">  &lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt;</span><br><span class="line">  &lt;parent&gt;</span><br><span class="line">    &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;spring-boot-starter-parent&lt;/artifactId&gt;</span><br><span class="line">    &lt;version&gt;1.5.10.RELEASE&lt;/version&gt;</span><br><span class="line">  &lt;/parent&gt;</span><br><span class="line">  &lt;groupId&gt;com.hezi&lt;/groupId&gt;</span><br><span class="line">  &lt;artifactId&gt;12-springboot-junit&lt;/artifactId&gt;</span><br><span class="line">  &lt;version&gt;0.0.1-SNAPSHOT&lt;/version&gt;</span><br><span class="line">  &lt;dependencies&gt;</span><br><span class="line">  &lt;!-- springboot启动器 --&gt;</span><br><span class="line">    &lt;dependency&gt;</span><br><span class="line">         &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;</span><br><span class="line">         &lt;artifactId&gt;spring-boot-starter-web&lt;/artifactId&gt;</span><br><span class="line">    &lt;/dependency&gt;</span><br><span class="line">    &lt;!-- thymeleaf启动器 --&gt;</span><br><span class="line">    &lt;dependency&gt;</span><br><span class="line">         &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;</span><br><span class="line">         &lt;artifactId&gt;spring-boot-starter-thymeleaf&lt;/artifactId&gt;</span><br><span class="line">    &lt;/dependency&gt;</span><br><span class="line">    &lt;!-- devtools坐标 --&gt;</span><br><span class="line">    &lt;dependency&gt;</span><br><span class="line">         &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;</span><br><span class="line">         &lt;artifactId&gt;spring-boot-devtools&lt;/artifactId&gt;</span><br><span class="line">         &lt;optional&gt;<span class="literal">true</span>&lt;/optional&gt;</span><br><span class="line">    &lt;/dependency&gt;</span><br><span class="line">    &lt;!-- spring data redis启动器 --&gt;</span><br><span class="line">    &lt;dependency&gt;</span><br><span class="line">         &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;</span><br><span class="line">         &lt;artifactId&gt;spring-boot-starter-data-redis&lt;/artifactId&gt;</span><br><span class="line">    &lt;/dependency&gt;</span><br><span class="line">    &lt;!-- junit启动器 --&gt;</span><br><span class="line">    &lt;dependency&gt;</span><br><span class="line">         &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;</span><br><span class="line">         &lt;artifactId&gt;spring-boot-starter-test&lt;/artifactId&gt;</span><br><span class="line">    &lt;/dependency&gt;</span><br><span class="line">  &lt;/dependencies&gt;</span><br><span class="line">&lt;/project&gt;</span><br></pre></td></tr></table></figure>
 
 <h4 id="以上是对springboot整合spring-data-redis的一个小的总结"><a href="#以上是对springboot整合spring-data-redis的一个小的总结" class="headerlink" title="以上是对springboot整合spring data redis的一个小的总结"></a>以上是对springboot整合spring data redis的一个小的总结</h4>
-        <hr>
-      
-    </div>
-
-    
-
-    
-  </div>
-</article>
-
-
-    <article class="blog-post">
-  
-
-  <div class="post-content">
-    <div class="post-header">
-      
-        
-  
-    <h1 class="post-title">
-      <a href="/codehezi.github.io/2019/07/05/two-blog/">
-        一些常见问题
-      </a>
-    </h1>
-  
-
-      
-    </div>
-    <div class="post-detail">
-      
-        <h4 id="org-apache-catalina-LifecycleException问题解决"><a href="#org-apache-catalina-LifecycleException问题解决" class="headerlink" title="org.apache.catalina.LifecycleException问题解决"></a>org.apache.catalina.LifecycleException问题解决</h4><pre><code>首先查看一下jar包是否都有，如果jar包没问题，看一下xml配置是否有问题，如果都是正常没有错误的情况下，将项目从Tomcat上移除，然后将Tomcat进行clean一下，再次启动项目就可以正常运行了。</code></pre><h4 id="springMVC中的model模型"><a href="#springMVC中的model模型" class="headerlink" title="springMVC中的model模型"></a>springMVC中的model模型</h4><pre><code>model模型中存放的数据就只能在跳转过去的页面使用，类似于request的请求，如果不传递下去也只能在请求页面使用，model模型也是类似特性，所以要想在一次会话中有要使用的数据的话，还是需要引入HttpSession，这是在使用springmvc要注意的点。
-在modelMap在Myeclipse中可以使用，在eclipse使用会出现一些问题，在eclipse中一般就是用model模型。    </code></pre>
         <hr>
       
     </div>
